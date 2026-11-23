@@ -259,6 +259,52 @@ button.mem[aria-expanded="true"] .ph.net{background:var(--accent)}
 .np.more .nph span{font-size:40px;font-weight:500;color:var(--warm)}
 .np.more b{color:var(--warm)}
 @media (max-width:960px){.netgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* mobile v2: ajustes de responsividade */
+@media (max-width:960px){
+  .sec{padding-top:72px!important}
+  .foot{margin-top:72px!important}
+  /* hero da home: símbolo menor e animação por tempo (não depende do scroll) */
+  .hero .pin{padding:8px 0 0!important;margin-bottom:-8px}
+  .hero .symwrap{width:min(240px,62vw)!important;transform:none!important}
+  .hero .rot,.hero .d1,.hero .d2,.hero .d3{animation-timeline:auto!important;animation-range:normal!important;animation-duration:5s!important;animation-delay:.3s!important;animation-timing-function:cubic-bezier(.65,0,.25,1)!important;animation-iteration-count:infinite!important;animation-direction:alternate!important;animation-fill-mode:both!important}
+  .hero .rot{animation-name:kRot!important}.hero .d1{animation-name:kD1!important}.hero .d2{animation-name:kD2!important}.hero .d3{animation-name:kD3!important}
+  .mesh{height:640px!important}
+  .hero .step{padding:28px 0!important}
+  /* destaque de Cannes: altura acompanha o texto */
+  .cannes{height:auto!important;min-height:560px;margin-top:48px!important}
+  .cannes .in{min-height:560px;padding-top:120px!important;padding-bottom:36px!important;gap:16px!important}
+  .cannes .shade{background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.2) 100%)!important}
+  .cannes p{font-size:16px!important}
+  /* "Do papel à rua": sem trilho de scroll vazio */
+  .svc-track{height:auto!important;margin-top:72px!important}
+  .svc-stage{position:relative!important;top:auto!important;display:block!important;height:auto!important;min-height:0!important;max-height:none!important;padding:56px 16px!important;overflow:visible!important}
+  .svc-top{position:relative!important;top:auto!important;margin-bottom:20px}
+  .svc-mid{position:relative!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;height:auto!important}
+  .svc-list{position:relative!important;top:auto!important;margin:0!important;animation:none!important;transform:none!important}
+  .si{opacity:1!important;animation:none!important;font-size:clamp(24px,7vw,30px)!important;height:auto!important;padding:12px 0;white-space:normal!important;text-align:center}
+  .svc-photos,.svc-desc{display:none!important}
+  /* barras fixas de filtro e de seções: uma linha só, rolável */
+  .filters,.subnav{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;border-radius:999px!important;width:auto!important;max-width:100%!important;padding:6px!important;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .filters::-webkit-scrollbar,.subnav::-webkit-scrollbar{display:none}
+  .filters .fbtn,.subnav a{flex:none;white-space:nowrap}
+  .filters .count{display:none}
+  .filters{margin-top:40px!important}
+  .ghostword{display:none}
+  .head[style*="padding-top:120px"]{padding-top:0!important}
+  .feat{height:auto!important;min-height:520px;margin-top:40px!important}
+  .feat .in{position:relative!important;min-height:520px;padding:150px 20px 24px!important;align-items:flex-start!important;flex-direction:column;justify-content:flex-end}
+  .feat .shade{background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.15) 100%)!important}
+  .feat p{font-size:15px!important}
+  /* cases */
+  .bleed{margin-top:32px!important;border-radius:20px}
+}
+@media (max-width:600px){
+  .h2{font-size:clamp(30px,8.4vw,40px)!important}
+  .ctabox .h2,.end .h2{font-size:clamp(34px,9.6vw,44px)!important}
+  .cannes .h2{font-size:clamp(34px,10vw,46px)!important}
+  .ch1{font-size:clamp(42px,12.5vw,60px)!important}
+  .phero{padding-top:48px!important}
+}
 </style>
 </head>
 <body>

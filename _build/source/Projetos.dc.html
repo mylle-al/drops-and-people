@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Drops · Projetos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FCF8F3;color:#141210;font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141210}a:hover{color:#9A5A0C}
+.dr *,.dr *::before,.dr *::after{box-sizing:border-box}
+.dr{--accent:#DF9330;--ink:#141210;--paper:#FCF8F3;--peach:#F9E7DA;--card:#F3EEE7;--mute:#5E574F;--line:rgba(20,18,16,.12);--warm:#9A5A0C;overflow-x:clip}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+h1,h2,h3,h4,p{margin:0}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.02em;color:var(--warm)}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:500}
+.pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.ph1{font-size:clamp(52px,7.6vw,118px);line-height:.95;letter-spacing:-.045em;font-weight:700}
+.h2{font-size:clamp(38px,4.6vw,66px);line-height:1;letter-spacing:-.035em;font-weight:700}
+.it{font-style:italic;font-weight:inherit;letter-spacing:-.03em}
+.hl{background:var(--accent);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.p{font-size:18px;line-height:1.55;color:var(--mute);text-wrap:pretty}
+.nav{position:sticky;top:0;z-index:60;background:rgba(252,248,243,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:3px solid var(--accent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:30px;width:auto;display:block}
+.links{display:flex;align-items:center;gap:4px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:999px}
+.links a:hover,.links a.on{background:rgba(20,18,16,.06);color:var(--ink)}
+.mnav{display:none}
+.mnav summary{list-style:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:var(--accent);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav nav{position:absolute;right:16px;top:68px;background:var(--paper);border-radius:18px;padding:8px;display:flex;flex-direction:column;min-width:240px;box-shadow:0 24px 60px rgba(20,18,16,.18)}
+.mnav nav a{min-height:48px;display:flex;align-items:center;padding:0 14px;text-decoration:none;border-radius:12px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s,background .3s,box-shadow .3s,color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(223,147,48,.8);color:var(--ink)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1px rgba(20,18,16,.35)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
+.btn.sm{min-height:44px;padding:0 20px}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes clipup{from{clip-path:inset(0 0 100% 0);transform:translateY(30px)}to{clip-path:inset(0 0 -10% 0);transform:none}}
+@keyframes popin{from{opacity:0;transform:translateY(60px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes grow{from{clip-path:inset(6% 5% 6% 5% round 40px)}to{clip-path:inset(0 0 0 0 round 28px)}}
+@keyframes par{from{transform:translateY(-6%) scale(1.14)}to{transform:translateY(6%) scale(1.14)}}
+@keyframes bigup{from{transform:translateY(40%)}to{transform:none}}
+@supports (animation-timeline: view()){
+  .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .hd{animation:clipup linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .pop{animation:popin linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  .grow{animation:grow linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+  .par img{animation:par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .bigword{animation:bigup linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+}
+.sec{padding:120px 0 0}
+.center-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:56px}
+.phero{padding:88px 0 0;text-align:center}
+.phero .in{display:flex;flex-direction:column;align-items:center;gap:24px}
+.ctabox{position:relative;border-radius:32px;overflow:hidden;padding:clamp(48px,8vw,110px) 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;background:linear-gradient(rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,radial-gradient(60% 80% at 50% 120%,rgba(223,147,48,.65),rgba(249,231,218,.4) 60%,rgba(252,248,243,0)),var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.ctabox .h2{font-size:clamp(42px,6vw,92px);max-width:980px}
+.foot{background:var(--ink);color:var(--paper);margin-top:120px;padding:72px 0 28px;overflow:hidden}
+.ftop{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot h4{font-family:'Geist Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#A59C90;margin-bottom:12px}
+.foot a{display:flex;align-items:center;min-height:34px;text-decoration:none;color:var(--paper);font-size:15px}
+.foot a:hover{color:var(--accent)}
+.bigmark{margin-top:80px}
+.bigmark img{width:100%;height:auto;display:block}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(252,248,243,.14);font-size:13px;color:#A59C90}
+/* página */
+.feat{position:relative;height:min(70vw,640px);border-radius:28px;overflow:hidden;margin-top:72px;color:#fff;background:#000;display:block;text-decoration:none}
+.feat video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat .shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0) 60%)}
+.feat .in{position:absolute;left:0;right:0;bottom:0;padding:40px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.feat h2{font-size:clamp(36px,4.6vw,68px);letter-spacing:-.04em;line-height:.95;font-weight:700;text-transform:uppercase;color:#fff;max-width:760px}
+.feat p{color:rgba(255,255,255,.88);font-size:17px;line-height:1.5;max-width:560px;margin-top:12px}
+.feat .lbl{color:var(--accent)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:72px;padding:14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);position:sticky;top:84px;z-index:20}
+.fbtn{appearance:none;border:0;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:44px;padding:0 18px;border-radius:999px;background:transparent;color:var(--ink);transition:background .25s,color .25s}
+.fbtn:hover{background:var(--card)}
+.fbtn.on{background:var(--ink);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{margin-left:auto;padding-right:10px;font-family:'Geist Mono',monospace;font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 24px;margin-top:48px}
+.card{display:flex;flex-direction:column;gap:16px;text-decoration:none}
+.card .im{position:relative;aspect-ratio:4/3;border-radius:24px;overflow:hidden;isolation:isolate}
+.card .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+.card .im::after{content:'';position:absolute;inset:0;background:var(--accent);mix-blend-mode:multiply;opacity:0;transition:opacity .5s}
+.card:hover .im img{transform:scale(1.06);filter:grayscale(1)}
+.card:hover .im::after{opacity:.85}
+.card .go{position:absolute;right:16px;bottom:16px;z-index:2;width:48px;height:48px;border-radius:50%;background:var(--paper);display:grid;place-items:center;transform:scale(0);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.card:hover .go{transform:scale(1) rotate(45deg)}
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;font-family:'Geist Mono',monospace;font-size:12.5px;color:var(--mute)}
+.tags span+span::before{content:'·';margin:0 10px;color:var(--accent)}
+.tags span:first-child{color:var(--warm)}
+.card h3{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.035em;font-weight:700;line-height:1.05;transition:color .3s}
+.card:hover h3{color:var(--warm)}
+.card .q{font-style:italic;font-weight:300;font-size:19px;line-height:1.35;color:var(--mute)}
+.card .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.45}
+.card .meta b{display:block;font-family:'Geist Mono',monospace;font-weight:400;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stat{background:#fff;border-radius:22px;padding:28px;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:8px}
+.stat b{font-size:clamp(48px,5vw,72px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.stat span{font-size:16px;color:var(--mute)}
+/* textura, cursor e interações globais */
+.dr::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:150;background-image:url(/_blob/bbd31351c8358eab4c4ff8c67d44d5d0);background-size:220px 220px;opacity:.09;mix-blend-mode:multiply}
+.hl{background:linear-gradient(180deg,transparent 58%,var(--accent) 58%,var(--accent) 94%,transparent 94%)!important;padding:0 .04em!important}
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:300;mix-blend-mode:multiply;transform:translate(-100px,-100px);transition:width .3s,height .3s,margin .3s,opacity .3s}
+.dr:has(a:hover) .cur,.dr:has(button:hover) .cur,.dr:has(summary:hover) .cur{width:64px;height:64px;margin:-32px 0 0 -32px;opacity:.45}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--ink);transform:translateY(102%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.btn:hover::after{transform:none}
+.btn:hover{color:var(--paper)!important}
+.btn.dark::after{background:var(--accent)}
+.btn.dark:hover{color:var(--ink)!important}
+.prog{position:fixed;left:0;top:0;right:0;height:3px;background:var(--ink);transform-origin:left;transform:scaleX(0);z-index:80;pointer-events:none}
+@keyframes prog{to{transform:scaleX(1)}}
+@supports (animation-timeline: scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root block)}}
+/* hierarquia tipográfica (escala única do site) */
+.h1,.ph1{font-size:clamp(46px,6vw,96px)!important;line-height:.96!important;letter-spacing:-.045em!important;font-weight:500!important;text-wrap:balance}
+.h1 .hl,.ph1 .hl{font-weight:800}
+.ch1{font-size:clamp(46px,6.6vw,108px)!important;line-height:.93!important;letter-spacing:-.05em!important;font-weight:800!important;text-wrap:balance}
+.h2{font-size:clamp(34px,3.9vw,56px)!important;line-height:1.04!important;letter-spacing:-.035em!important;font-weight:700!important;text-wrap:balance}
+.ctabox .h2,.end .h2{font-size:clamp(40px,5.2vw,78px)!important}
+.cannes .h2,.feat h2{font-size:clamp(38px,5vw,78px)!important}
+.it{font-weight:inherit}
+.h2 .it,.ctabox .it{font-weight:inherit}
+h3{text-wrap:balance}
+.p{font-size:17px;line-height:1.62;color:#5E574F}
+.phero .p,.intro .p,.head .p,.center-head .p,.ctabox .p{font-size:19px!important;line-height:1.55!important;color:#3D362F!important}
+.on-dark .p,.on-dark .head .p{color:#CFC6BA!important}
+.p strong,.p b{color:var(--ink);font-weight:600}
+.on-dark .p strong{color:var(--paper)}
+.lbl{font-size:12px!important;font-weight:500;letter-spacing:.07em!important;text-transform:uppercase}
+.pill{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.step h3{font-size:clamp(28px,2.6vw,40px)!important}
+.step p{font-size:18px!important}
+.si{font-size:clamp(28px,3.2vw,48px)}
+.svcblock h2,.track h3,.story h3{font-size:clamp(26px,2.6vw,40px)!important;line-height:1.06!important}
+.svcblock h2{font-size:clamp(32px,3.6vw,52px)!important}
+.story p{font-size:18px!important;line-height:1.65!important}
+.cq{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.25!important}
+.fc dd{font-size:16px!important}
+.hbox h3{font-size:clamp(24px,2.2vw,32px)!important}
+.tc h4,.tq h4{font-size:19px!important;line-height:1.3!important}
+.tq p{font-size:clamp(20px,2vw,28px)!important;line-height:1.4!important;font-weight:500!important}
+.pc h3,.card h3{letter-spacing:-.03em}
+.list li,.ol li,.ticks li{font-size:16px}
+.nomotion *{animation:none!important;transition:none!important}
+@media (max-width:960px){
+  .links{display:none}.mnav{display:block}
+  .grid,.ftop,.stats{grid-template-columns:1fr}
+  .filters{border-radius:22px;top:80px}
+  .count{display:none}
+  .card .meta{grid-template-columns:1fr}
+  .feat .in{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="dr {{motionClass}}" style="--accent: {{accent}}" onMouseMove="{{mm}}">
+<div class="cur" aria-hidden="true"></div><div class="prog" aria-hidden="true"></div>
+<header class="nav">
+<div class="wrap nav-in">
+<a class="brand" href="Main.dc.html" aria-label="Drops and People, início"><img src="/_blob/e9882f67d18494794b4afa651bc97ce4" alt="DROPS"></a>
+<nav class="links" aria-label="Principal">
+<a href="OQueFazemos.dc.html">O que fazemos</a>
+<a class="on" href="Projetos.dc.html" aria-current="page">Projetos</a>
+<a href="Palestras.dc.html">Palestras</a>
+<a href="Sobre.dc.html">Sobre</a>
+<a class="btn sm" href="Contato.dc.html" style="margin-left:12px">Vamos conversar</a>
+</nav>
+<details class="mnav"><summary>Menu</summary><nav aria-label="Menu móvel"><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a><a href="Contato.dc.html">Vamos conversar</a></nav></details>
+</div>
+</header>
+
+<main>
+<section class="phero">
+<div class="wrap in">
+<span class="pill">Projetos</span>
+<h1 class="ph1">Quando ideias viram <span class="it">movimento.</span></h1>
+<p class="p" style="max-width:620px">Projetos que a Drops concebeu ou executou em Pernambuco, no Rio Grande do Norte, no Rio de Janeiro, na França e muito mais.</p>
+</div>
+<div class="wrap">
+<a class="feat grow" href="CaseCannes.dc.html">
+<video src="/_blob/e00c329e613dd441f2c6c022417e0444" poster="/_blob/020d5c4914f3109a9aa302a75810c413" autoplay="" muted="" loop="" playsinline="" aria-label="Frevo no tapete vermelho de Cannes"></video>
+<div class="shade"></div>
+<div class="in">
+<div><span class="lbl">[ destaque · cannes 2025 ]</span><h2>O frevo no tapete vermelho de Cannes</h2><p>Concepção, curadoria e articulação institucional da apresentação dos Guerreiros do Passo no lançamento de <em>O Agente Secreto</em>, com a House Cultura, o Governo de Pernambuco, a Embratur e a Vitrine Filmes. A Drops também fez a curadoria da festa, em 2025.</p></div>
+<span class="btn">Ver o case</span>
+</div>
+</a>
+
+<div class="filters" role="group" aria-label="Filtrar projetos por serviço">
+<sc-for list="{{filters}}" as="item" hint-placeholder-count="4">
+<button type="button" class="fbtn {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}">{{item.label}}</button>
+</sc-for>
+<span class="count">{{countLabel}}</span>
+</div>
+
+<div class="grid">
+<sc-for list="{{visible}}" as="p" hint-placeholder-count="6">
+<a class="card pop" href="{{p.href}}">
+<div class="im par"><img src="{{p.img}}" alt="{{p.alt}}"><span class="go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></div>
+<div class="tags"><span>{{p.cat}}</span><span>{{p.place}}</span><span>{{p.year}}</span></div>
+<h3>{{p.title}}</h3>
+<p class="q">{{p.q}}</p>
+<div class="meta"><div><b>Papel da Drops</b>{{p.role}}</div><div><b>Com</b>{{p.partners}}</div></div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+
+<section class="sec">
+<div class="wrap">
+<div class="ctabox pop">
+<span class="lbl">[ o próximo projeto ]</span>
+<h2 class="h2">O próximo pode ser <span class="it">o seu.</span></h2>
+<p class="p" style="max-width:560px">Conte o que você precisa e a gente marca uma conversa.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a class="btn" href="Contato.dc.html">Começar uma conversa</a><a class="btn ghost" href="OQueFazemos.dc.html">Ver serviços</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="foot">
+<div class="wrap">
+<div class="ftop">
+<p style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2;max-width:320px">Projetos de cultura, turismo e educação. Do papel à rua.</p>
+<div><h4>Navegação</h4><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a></div>
+<div><h4>Contato</h4><a href="mailto:adri@dropsbr.com">adri@dropsbr.com</a><a href="https://wa.me/5521991092001">WhatsApp (21) 99109-2001</a></div>
+<div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
+</div>
+<div class="bigmark bigword"><img src="/_blob/03a66f9292453bf7179903812399d3c5" alt="DROPS"></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#DF9330","options":["#DF9330","#E0612F","#F5BE3B","#141210"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const f = (this.state && this.state.f) || 'todos';
+    const all = [
+      { k: ['curadoria'], cat: 'Curadoria e projetos culturais', place: 'Cannes, França', year: '2025', title: 'O frevo no tapete vermelho', q: 'E se o frevo ocupasse o tapete vermelho mais famoso do mundo?', role: 'Concepção, curadoria e articulação institucional', partners: 'House Cultura, Guerreiros do Passo, Governo de Pernambuco, Embratur e Vitrine Filmes', img: '/_blob/5f99b341f66e3482cbeb9115c35b7daa', alt: 'Guerreiros do Passo com a bandeira de Pernambuco em Cannes', href: 'CaseCannes.dc.html' },
+      { k: ['curadoria', 'imersoes'], cat: 'Curadoria e imersões', place: 'Natal, RN', year: '2025', title: 'ELI Summit 2025', q: 'Como fazer pessoas de 25 estados aprenderem umas com as outras?', role: 'Organização e articulação das 15 oficinas e preparação dos 30 cases de ecossistemas locais', partners: 'Clear Purpose e Sebrae', img: '/_blob/e078dd25dfb1b748016a0fbd1d814992', alt: 'Equipe no palco do ELI Summit 2025', href: 'CaseEli.dc.html' },
+      { k: ['turismo'], cat: 'Turismo e experiências', place: 'Recife, PE', year: '2025', title: 'A Cidade no Cinema de Kleber Mendonça Filho', q: 'E se o cinema não precisasse terminar na sala?', role: 'Concepção da experiência e do roteiro imersivo. Novas edições no Rec’n’Play 2025 e no Festival LED', partners: 'Embratur, Vitrine Filmes, Prefeitura do Recife, Recife Film Commission e Roteo', img: '/_blob/06f30aa8e248991f9a1b5a631fd06b62', alt: 'Público no roteiro A Cidade no Cinema', href: 'CaseCidade.dc.html' },
+      { k: ['turismo'], cat: 'Turismo e experiências', place: 'Rio de Janeiro, RJ', year: '2025', title: 'Rio em Cena · Festival LED', q: 'Como o cinema pode reconectar as pessoas com a cidade?', role: 'Concepção e realização de experiência cultural pelos cenários do cinema no Centro do Rio', partners: 'Festival LED Luz na Educação, da Globo', img: '/_blob/06fef3d8eb2a8a3cc64e479dace7251e', alt: 'Participantes do Rio em Cena', href: 'CaseRio.dc.html' },
+      { k: ['imersoes'], cat: 'Imersões e treinamentos', place: 'Recife, PE', year: '2025', title: 'Imersão no Gabinete do Recentro', q: 'Como fortalecer vínculos e transformar o ambiente de trabalho?', role: 'Diagnóstico, oficinas de escuta, feedback e conflitos, e um Código de Conduta criado com a equipe', partners: 'Gabinete do Recentro, Recife', img: '/_blob/333e99d2a87ab4e97ccee2afbec0136f', alt: 'Roda de conversa com servidores do Recentro', href: 'CaseRecentro.dc.html' },
+      { k: ['imersoes'], cat: 'Imersões e treinamentos', place: 'Jaboatão dos Guararapes, PE', year: '2025', title: 'Imersão com servidores de Jaboatão dos Guararapes', q: 'Como unir inovação, propósito e serviço público?', role: 'Concepção e condução da imersão, com o Mapa de Talentos da equipe', partners: 'Controladoria Geral do Município de Jaboatão dos Guararapes (cliente)', img: '/_blob/21f348cdaec1d9c4f3146b2d0af7a3aa', alt: 'Servidores da Controladoria de Jaboatão', href: 'CaseJaboatao.dc.html' }
+    ];
+    const visible = all.filter((p) => f === 'todos' || p.k.indexOf(f) !== -1);
+    const defs = [['todos', 'Todos'], ['turismo', 'Turismo e experiências'], ['curadoria', 'Curadoria e projetos culturais'], ['imersoes', 'Imersões e treinamentos']];
+    const filters = defs.map(([k, label]) => ({ label, cls: k === f ? 'on' : '', pressed: k === f ? 'true' : 'false', pick: () => this.setState({ f: k }) }));
+    return {
+      mm: (e) => { const c = e.currentTarget.querySelector('.cur'); if (c) c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)'; },
+      accent: this.props.accent ?? '#DF9330',
+      motionClass: this.props.motion === false ? 'nomotion' : '',
+      filters,
+      visible,
+      countLabel: visible.length + (visible.length === 1 ? ' projeto' : ' projetos')
+    };
+  }
+}
+</script>
+</body>
+</html>

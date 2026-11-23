@@ -160,6 +160,28 @@ h3{text-wrap:balance}
   .gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1 / -1;order:-1}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+.vidcard{position:relative;margin-top:56px;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:#EDE9E3;box-shadow:0 40px 80px -50px rgba(20,18,16,.45)}
+.vidcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vplay{appearance:none;border:0;position:absolute;inset:0;width:100%;display:flex;align-items:flex-end;justify-content:flex-start;gap:18px;padding:clamp(20px,3vw,40px);background:linear-gradient(0deg,rgba(20,18,16,.55),rgba(20,18,16,0) 55%);color:#fff;cursor:pointer;font:inherit;text-align:left}
+.vbtn{width:clamp(64px,7vw,92px);height:clamp(64px,7vw,92px);border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;flex:none;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.vplay:hover .vbtn{transform:scale(1.08)}
+.vtxt b{display:block;font-size:clamp(20px,2vw,28px);font-weight:700;letter-spacing:-.02em}
+.vtxt small{display:block;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-top:6px}
+.vidcard.playing .vplay{display:none}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -185,36 +207,32 @@ h3{text-wrap:balance}
 </section>
 </div>
 
-<div class="bleed grow" role="img" aria-label="Participantes do Rio em Cena reunidos no Centro do Rio"><img src="/assets/216576dca37110012438b46ffe6b6022.webp" alt=""></div>
+<div class="wrap"><div class="vidcard "><video src="/assets/bbe5c667f22df4251186a59308544095.mp4" poster="/assets/810ebca340e3a934b48b2109b1d6b39f.jpg" playsinline preload="metadata" aria-label="Vídeo do Rio em Cena"></video><button type="button" class="vplay" data-play aria-label="Assistir ao vídeo do Rio em Cena"><span class="vbtn"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span><span class="vtxt"><b>Assista ao Rio em Cena</b><small>1 min · com som</small></span></button></div></div>
 
 <div class="wrap">
 <dl class="ficha">
-<div class="fc pop"><dt>Local</dt><dd>Píer Mauá, Rio de Janeiro</dd></div>
+<div class="fc pop"><dt>Origem</dt><dd>Píer Mauá, Rio de Janeiro</dd></div>
 <div class="fc pop"><dt>Ano</dt><dd>2025</dd></div>
 <div class="fc pop"><dt>Papel da Drops</dt><dd>Concepção e realização de experiência cultural urbana</dd></div>
-<div class="fc pop"><dt>Parceiros</dt><dd>Festival LED Luz na Educação e Globo</dd></div>
+<div class="fc pop"><dt>Parceiros</dt><dd>Festival LED Luz na Educação, da Globo. Guiamento: Val Vargas</dd></div>
 </dl>
 
 <section class="sec" aria-label="Destaques">
 <div class="hl2">
 <div class="hbox dark pop"><span class="lbl">[ cenários de cinema ]</span><h3>A cidade de filmes que todo mundo conhece.</h3><ul class="films"><li>Ainda Estou Aqui</li><li>Central do Brasil</li><li>Madame Satã</li><li>Rio, 40 Graus</li></ul></div>
-<div class="hbox or pop"><span class="lbl">[ o projeto online ]</span><h3>Duas etapas, um objetivo: usar cultura e cinema para dar novos sentidos aos espaços da cidade.</h3><a class="btn dark" href="https://rioemcena.com.br" style="align-self:flex-start;margin-top:auto">Visitar rioemcena.com.br ↗</a></div>
+<div class="hbox or pop"><span class="lbl">[ o projeto ]</span><h3>Um grupo percorrendo trechos icônicos do Rio que viraram cinema, para dar novos sentidos aos espaços da cidade.</h3><a class="btn dark" href="https://rioemcena.com.br" style="align-self:flex-start;margin-top:auto">Visitar rioemcena.com.br ↗</a></div>
 </div>
 </section>
 
 <section class="sec" aria-label="O case">
-<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>O festival</h3><p class="p">Durante o Festival LED Luz na Educação, da Globo, o Píer Mauá recebeu uma experiência cultural pelos cenários de filmes rodados no Rio de Janeiro.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Usar o cinema para reconectar as pessoas com a cidade e com os lugares onde histórias conhecidas foram filmadas.</p></div></div>
-<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Concebemos e realizamos a experiência, em duas etapas, cuidando de cada parte do percurso: do guia ao material entregue ao público.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p><span class="todo">[INSERIR: público atendido e resultados da experiência]</span></p></div></div>
+<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>O festival</h3><p class="p">Durante o Festival LED Luz na Educação, da Globo, um grupo saiu do Píer Mauá para percorrer os cenários de filmes rodados no Rio de Janeiro.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Usar o cinema para reconectar as pessoas com a cidade e com os lugares onde histórias conhecidas foram filmadas.</p></div></div>
+<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Concebemos e realizamos a experiência presencial, cuidando de cada parte do percurso, do guia impresso aos brindes exclusivos entregues ao público. No dia, o grupo foi conduzido pela guia especializada Val Vargas. A experiência combinou o percurso com um roteiro digital audiovisual, com geolocalização e disponível em 3 idiomas no webapp rioemcena.com.br.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">Mais de 50 pessoas fizeram o percurso no dia, guiadas por Val Vargas, e o site rioemcena.com.br passou de 300 visitas. A experiência mostrou o Centro do Rio pelas lentes do cinema e aproximou o público de lugares que muita gente conhecia só pelas telas. O roteiro cinematográfico digital segue disponível para quem quiser refazer o caminho por conta própria.</p></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal">
-<figure class="pop par" style="height:420px"><img src="/assets/2649a52b23a923304fe86f32b80c33a2.webp" alt="Participantes da experiência no ônibus"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/52151e18a119788fcc3a2444da476c42.webp" alt="Material do Rio em Cena com QR code"></figure>
-<figure class="pop par" style="height:420px"><img src="/assets/ebcd9515380f286b3c2ac342b63d9612.webp" alt="Experiência Rio em Cena"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/06fef3d8eb2a8a3cc64e479dace7251e.webp" alt="Grupo do Rio em Cena em frente ao Theatro Municipal" loading="lazy"></figure><figure class="gx"><img src="/assets/23746928cfd140ac3bcb3a16191348d2.webp" alt="Grupo no Real Gabinete Português de Leitura" loading="lazy"></figure><figure class="gx"><img src="/assets/2bc520560b64d035670cfa8ede36fb14.webp" alt="Participantes durante o percurso" loading="lazy"></figure><figure class="gx"><img src="/assets/c24012cf651ea1ff48cde8fcb5e9eacc.webp" alt="Guia apresentando um ponto do roteiro" loading="lazy"></figure><figure class="gx"><img src="/assets/70fc21a811340e39af91c3cfb25b4b2b.webp" alt="Participantes com o guia do Rio em Cena" loading="lazy"></figure><figure class="gx"><img src="/assets/3ab5e4af3d14b5aa5c266d8fac918501.webp" alt="Grupo caminhando pelo Centro do Rio" loading="lazy"></figure><figure class="gx"><img src="/assets/c1f81356274d1927a162069fd9244a30.webp" alt="Percurso pelas ruas do Centro" loading="lazy"></figure><figure class="gx"><img src="/assets/52151e18a119788fcc3a2444da476c42.webp" alt="Material do Rio em Cena com QR code" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/06fef3d8eb2a8a3cc64e479dace7251e.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/23746928cfd140ac3bcb3a16191348d2.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/2bc520560b64d035670cfa8ede36fb14.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/c24012cf651ea1ff48cde8fcb5e9eacc.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/70fc21a811340e39af91c3cfb25b4b2b.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/3ab5e4af3d14b5aa5c266d8fac918501.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/c1f81356274d1927a162069fd9244a30.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/52151e18a119788fcc3a2444da476c42.webp" alt="" loading="lazy"></figure></div></div>
 </section>
 
 <section class="sec" aria-label="Depoimento">
@@ -231,7 +249,7 @@ h3{text-wrap:balance}
 <section class="sec">
 <a class="next" href="/case-recentro">
 <div style="display:flex;flex-direction:column;gap:16px"><span class="lbl">[ próximo projeto ]</span><h2>Gabinete do Recentro ↗</h2></div>
-<div class="im"><img src="/assets/b7f2fd4047963ce62fd4651cffb8a4d3.webp" alt=""></div>
+<div class="im"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt=""></div>
 </a>
 </section>
 
@@ -255,7 +273,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -274,6 +292,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

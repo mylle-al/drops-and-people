@@ -159,7 +159,7 @@ h3{text-wrap:balance}
 <div class="wrap in">
 <span class="pill">Contato</span>
 <h1 class="ph1">Vamos <span class="hl">conversar?</span></h1>
-<p class="p" style="max-width:620px">Conte o que você precisa. Quanto mais contexto, melhor a primeira conversa: público, prazo, cidade e objetivo.</p>
+<p class="p" style="max-width:620px">Conte o que você precisa. Quanto mais contexto, melhor: público, prazo, cidade e objetivo.</p>
 </div>
 <div class="wrap grid">
 <form class="form pop" action="#" aria-label="Formulário de contato">
@@ -174,11 +174,11 @@ h3{text-wrap:balance}
 <fieldset class="field">
 <legend>O que você precisa?</legend>
 <div class="opts">
-<label class="opt"><input type="radio" name="tipo" value="turismo" checked><span>Turismo e experiências</span></label>
+<label class="opt"><input type="radio" name="tipo" value="turismo" checked=""><span>Turismo e experiências</span></label>
 <label class="opt"><input type="radio" name="tipo" value="curadoria"><span>Curadoria e projetos culturais</span></label>
 <label class="opt"><input type="radio" name="tipo" value="imersao"><span>Imersão ou treinamento</span></label>
 <label class="opt"><input type="radio" name="tipo" value="palestra"><span>Palestra</span></label>
-<label class="opt"><input type="radio" name="tipo" value="outro"><span>Parceria ou imprensa</span></label>
+<label class="opt"><input type="radio" name="tipo" value="outro"><span>Outro assunto</span></label>
 </div>
 </fieldset>
 <div class="row2">
@@ -193,7 +193,7 @@ h3{text-wrap:balance}
 <a class="cc o pop" href="https://wa.me/5521991092001"><span class="lbl">WhatsApp</span><b>(21) 99109-2001</b><span>O caminho mais rápido para falar com a gente.</span></a>
 <a class="cc d pop" href="mailto:adri@dropsbr.com"><span class="lbl" style="color:#DF9330;opacity:1">E-mail</span><b>adri@dropsbr.com</b><span>Projetos, palestras e parcerias.</span></a>
 <a class="cc l pop" href="https://instagram.com/dropsandpeople"><span class="lbl">Instagram</span><b>@dropsandpeople</b><span>Bastidores e projetos.</span></a>
-<div class="cc l pop"><span class="lbl">Base</span><b>Recife, PE</b><span>Projetos em todo o Brasil e fora dele.</span></div>
+<div class="cc l pop"><span class="lbl">Base</span><b>Rio de Janeiro, RJ</b><span>Projetos em todo o Brasil e fora dele.</span></div>
 </div>
 </div>
 </section>
@@ -208,7 +208,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -227,6 +227,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

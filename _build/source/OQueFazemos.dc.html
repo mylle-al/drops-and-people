@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Drops · O que fazemos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FCF8F3;color:#141210;font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141210}a:hover{color:#9A5A0C}
+.dr *,.dr *::before,.dr *::after{box-sizing:border-box}
+.dr{--accent:#DF9330;--ink:#141210;--paper:#FCF8F3;--peach:#F9E7DA;--card:#F3EEE7;--mute:#5E574F;--line:rgba(20,18,16,.12);--warm:#9A5A0C;overflow-x:clip}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+h1,h2,h3,h4,p{margin:0}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.02em;color:var(--warm)}
+.on-dark .lbl{color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:500}
+.pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.on-dark .pill{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);color:var(--paper)}
+.ph1{font-size:clamp(52px,7.6vw,118px);line-height:.95;letter-spacing:-.045em;font-weight:700}
+.h2{font-size:clamp(38px,4.6vw,66px);line-height:1;letter-spacing:-.035em;font-weight:700}
+.it{font-style:italic;font-weight:inherit;letter-spacing:-.03em}
+.hl{background:var(--accent);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.p{font-size:18px;line-height:1.55;color:var(--mute);text-wrap:pretty}
+.on-dark .p{color:#CFC6BA}
+.nav{position:sticky;top:0;z-index:60;background:rgba(252,248,243,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:3px solid var(--accent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:30px;width:auto;display:block}
+.links{display:flex;align-items:center;gap:4px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:999px}
+.links a:hover,.links a.on{background:rgba(20,18,16,.06);color:var(--ink)}
+.mnav{display:none}
+.mnav summary{list-style:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:var(--accent);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav nav{position:absolute;right:16px;top:68px;background:var(--paper);border-radius:18px;padding:8px;display:flex;flex-direction:column;min-width:240px;box-shadow:0 24px 60px rgba(20,18,16,.18)}
+.mnav nav a{min-height:48px;display:flex;align-items:center;padding:0 14px;text-decoration:none;border-radius:12px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s,background .3s,box-shadow .3s,color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(223,147,48,.8);color:var(--ink)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1px rgba(20,18,16,.35)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.dark:hover{background:var(--accent);color:var(--ink)}
+.on-dark .btn.ghost{box-shadow:inset 0 0 0 1px rgba(252,248,243,.4);color:var(--paper)}
+.btn.sm{min-height:44px;padding:0 20px}
+.sym{display:block;overflow:visible}
+.sym .d,.sym .rot{transform-box:view-box;transform-origin:106.8px 107.6px}
+.sym use{fill:currentColor}
+.f1 .rot{transform:translateX(50.5px)}
+.f2 .d1,.f3 .d1,.f4 .d1{transform:scaleX(-1)}
+.f3 .d2,.f4 .d2{transform:rotate(90deg)}
+.f3 .d3,.f4 .d3{transform:rotate(-90deg)}
+.f4 .rot{transform:rotate(45deg)}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes clipup{from{clip-path:inset(0 0 100% 0);transform:translateY(30px)}to{clip-path:inset(0 0 -10% 0);transform:none}}
+@keyframes popin{from{opacity:0;transform:translateY(60px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes slideL{from{transform:translateX(6%)}to{transform:translateX(-22%)}}
+@keyframes par{from{transform:translateY(-6%) scale(1.14)}to{transform:translateY(6%) scale(1.14)}}
+@keyframes bigup{from{transform:translateY(40%)}to{transform:none}}
+@keyframes ghost{from{transform:translateX(5%)}to{transform:translateX(-25%)}}
+@supports (animation-timeline: view()){
+  .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .hd{animation:clipup linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .pop{animation:popin linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  .slide{animation:slideL linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .par img{animation:par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .bigword{animation:bigup linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+  .gh{animation:ghost linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+}
+.sec{padding:130px 0 0}
+.center-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:56px}
+.head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:56px}
+.phero{padding:88px 0 0;text-align:center}
+.phero .in{display:flex;flex-direction:column;align-items:center;gap:24px}
+.ribwrap{overflow:hidden;margin-top:72px}
+.ribbon{display:flex;gap:16px;width:max-content;padding-left:4vw}
+.ribbon figure{margin:0;flex:none;width:260px;height:330px;border-radius:28px;overflow:hidden}
+.ribbon figure:nth-child(even){height:290px;margin-top:20px}
+.ribbon img{width:100%;height:100%;object-fit:cover;display:block}
+.ctabox{position:relative;border-radius:32px;overflow:hidden;padding:clamp(48px,8vw,110px) 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;background:linear-gradient(rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,radial-gradient(60% 80% at 50% 120%,rgba(223,147,48,.65),rgba(249,231,218,.4) 60%,rgba(252,248,243,0)),var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.ctabox .h2{font-size:clamp(42px,6vw,92px);max-width:980px}
+.foot{background:var(--ink);color:var(--paper);margin-top:120px;padding:72px 0 28px;overflow:hidden}
+.ftop{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot h4{font-family:'Geist Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#A59C90;margin-bottom:12px}
+.foot a{display:flex;align-items:center;min-height:34px;text-decoration:none;color:var(--paper);font-size:15px}
+.foot a:hover{color:var(--accent)}
+.bigmark{margin-top:80px}
+.bigmark img{width:100%;height:auto;display:block}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(252,248,243,.14);font-size:13px;color:#A59C90}
+/* página */
+.svcblock{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding:100px 0;border-top:1px solid var(--line)}
+.svcblock.flip .media{order:2}
+.media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px;gap:12px}
+.media figure{margin:0;border-radius:22px;overflow:hidden;position:relative}
+.media figure.tall{grid-row:span 2}
+.media img{width:100%;height:100%;object-fit:cover;display:block}
+.media .tagimg{position:absolute;left:12px;bottom:12px;background:rgba(252,248,243,.92);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600}
+.svcblock .num{font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--warm)}
+.svcblock h2{font-size:clamp(40px,4.6vw,68px);line-height:.98;letter-spacing:-.04em;font-weight:700}
+.list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.list li::before{content:'→';color:var(--warm);font-weight:700}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:16px;line-height:1.5}
+.kv dt{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.kv dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;font-size:14px;font-weight:500;transition:background .3s}
+.chips a:hover{background:var(--accent)}
+.ghostword{position:absolute;left:0;top:40px;white-space:nowrap;font-size:clamp(120px,16vw,240px);font-weight:800;letter-spacing:-.05em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(20,18,16,.1);text-transform:uppercase;pointer-events:none}
+.process{background:var(--card);border-radius:36px;padding:clamp(40px,6vw,80px);margin-top:130px;position:relative;overflow:hidden}
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;position:relative}
+.pcard{background:#fff;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;min-height:360px;box-shadow:0 20px 40px -30px rgba(20,18,16,.4);transition:transform .4s}
+.pcard:hover{transform:translateY(-6px)}
+.pcard .dia{height:150px;border-radius:16px;background:var(--paper);display:grid;place-items:center;position:relative;overflow:hidden}
+.pcard .dia .sym{width:120px;height:120px;color:var(--ink);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .dia .sym{transform:rotate(45deg) scale(1.05)}
+.pcard .dia::before{content:'';position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(closest-side,rgba(223,147,48,.45),rgba(223,147,48,0))}
+.pcard h3{font-size:24px;letter-spacing:-.025em;font-weight:700}
+.pcard p{font-size:15px;line-height:1.5;color:var(--mute)}
+.pcard .get{margin-top:auto;font-size:14px;font-weight:600;padding-top:12px;border-top:1px solid var(--line)}
+.formats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.formats span{display:inline-flex;align-items:center;min-height:60px;padding:0 26px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:22px;font-weight:600;letter-spacing:-.02em;transition:background .3s,transform .3s}
+.formats span:hover{background:var(--accent);transform:translateY(-3px)}
+.car{margin-top:72px}
+.car-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;cursor:grab;scrollbar-width:none;padding:0 clamp(16px,4vw,48px) 8px;user-select:none;-webkit-user-select:none}
+.car-track::-webkit-scrollbar{display:none}
+.car-track.dragging{cursor:grabbing;scroll-snap-type:none}
+.car-track.dragging .car-item{pointer-events:none}
+.car-item{position:relative;flex:none;width:280px;height:360px;border-radius:28px;overflow:hidden;scroll-snap-align:start;text-decoration:none;color:#fff;isolation:isolate}
+.car-item:nth-child(even){height:320px;margin-top:20px}
+.car-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1);-webkit-user-drag:none}
+.car-item::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0) 50%);opacity:0;transition:opacity .4s}
+.car-item:hover img{transform:scale(1.07)}
+.car-item:hover::after{opacity:1}
+.car-item .cap{position:absolute;left:18px;bottom:16px;z-index:2;display:flex;flex-direction:column;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s;text-align:left}
+.car-item .cap b{font-size:18px;font-weight:700;color:#fff}
+.car-item .cap span{font-size:13px;color:rgba(255,255,255,.85)}
+.car-item:hover .cap{opacity:1;transform:none}
+.car-item .go{position:absolute;right:14px;top:14px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-weight:700;transform:scale(0);transition:transform .35s}
+.car-item:hover .go{transform:scale(1)}
+.car-ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.arw{appearance:none;border:0;cursor:pointer;width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;color:var(--ink);transition:background .3s,transform .3s}
+.arw:hover{background:var(--accent);transform:scale(1.06)}
+.subnav{position:sticky;top:84px;z-index:20;display:flex;flex-wrap:wrap;gap:6px;padding:8px;border-radius:999px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px var(--line);width:max-content;max-width:100%;margin:0 auto 24px}
+.subnav a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;transition:background .25s}
+.subnav a i{font-style:normal;font-family:'Geist Mono',monospace;font-size:11px;color:var(--warm)}
+.subnav a:hover{background:var(--accent)}
+.media a{position:relative;display:block;border-radius:22px;overflow:hidden;isolation:isolate}
+.media a.tall{grid-row:span 2}
+.media a img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.media a .ov{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;padding:16px;background:rgba(223,147,48,.0);transition:background .4s}
+.media a .ov span{font-size:14px;font-weight:700;color:var(--ink);background:var(--paper);border-radius:999px;padding:8px 14px;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.media a .ov i{font-style:normal;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;opacity:0;transform:scale(.6) rotate(-45deg);transition:opacity .35s,transform .35s}
+.media a:hover img{transform:scale(1.07);filter:grayscale(1)}
+.media a:hover .ov{background:rgba(223,147,48,.75)}
+.media a:hover .ov span{opacity:1;transform:none}
+.media a:hover .ov i{opacity:1;transform:none}
+.media a:hover .tagimg{opacity:0}
+.list li{transition:padding .3s,color .3s;cursor:default}
+.list li:hover{padding-left:10px;color:var(--warm)}
+.chips a{transition:background .3s,transform .3s}
+.chips a:hover{transform:translateY(-2px)}
+/* textura, cursor e interações globais */
+.dr::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:150;background-image:url(/_blob/bbd31351c8358eab4c4ff8c67d44d5d0);background-size:220px 220px;opacity:.09;mix-blend-mode:multiply}
+.hl{background:linear-gradient(180deg,transparent 58%,var(--accent) 58%,var(--accent) 94%,transparent 94%)!important;padding:0 .04em!important}
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:300;mix-blend-mode:multiply;transform:translate(-100px,-100px);transition:width .3s,height .3s,margin .3s,opacity .3s}
+.dr:has(a:hover) .cur,.dr:has(button:hover) .cur,.dr:has(summary:hover) .cur{width:64px;height:64px;margin:-32px 0 0 -32px;opacity:.45}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--ink);transform:translateY(102%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.btn:hover::after{transform:none}
+.btn:hover{color:var(--paper)!important}
+.btn.dark::after{background:var(--accent)}
+.btn.dark:hover{color:var(--ink)!important}
+.prog{position:fixed;left:0;top:0;right:0;height:3px;background:var(--ink);transform-origin:left;transform:scaleX(0);z-index:80;pointer-events:none}
+@keyframes prog{to{transform:scaleX(1)}}
+@supports (animation-timeline: scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root block)}}
+/* hierarquia tipográfica (escala única do site) */
+.h1,.ph1{font-size:clamp(46px,6vw,96px)!important;line-height:.96!important;letter-spacing:-.045em!important;font-weight:500!important;text-wrap:balance}
+.h1 .hl,.ph1 .hl{font-weight:800}
+.ch1{font-size:clamp(46px,6.6vw,108px)!important;line-height:.93!important;letter-spacing:-.05em!important;font-weight:800!important;text-wrap:balance}
+.h2{font-size:clamp(34px,3.9vw,56px)!important;line-height:1.04!important;letter-spacing:-.035em!important;font-weight:700!important;text-wrap:balance}
+.ctabox .h2,.end .h2{font-size:clamp(40px,5.2vw,78px)!important}
+.cannes .h2,.feat h2{font-size:clamp(38px,5vw,78px)!important}
+.it{font-weight:inherit}
+.h2 .it,.ctabox .it{font-weight:inherit}
+h3{text-wrap:balance}
+.p{font-size:17px;line-height:1.62;color:#5E574F}
+.phero .p,.intro .p,.head .p,.center-head .p,.ctabox .p{font-size:19px!important;line-height:1.55!important;color:#3D362F!important}
+.on-dark .p,.on-dark .head .p{color:#CFC6BA!important}
+.p strong,.p b{color:var(--ink);font-weight:600}
+.on-dark .p strong{color:var(--paper)}
+.lbl{font-size:12px!important;font-weight:500;letter-spacing:.07em!important;text-transform:uppercase}
+.pill{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.step h3{font-size:clamp(28px,2.6vw,40px)!important}
+.step p{font-size:18px!important}
+.si{font-size:clamp(28px,3.2vw,48px)}
+.svcblock h2,.track h3,.story h3{font-size:clamp(26px,2.6vw,40px)!important;line-height:1.06!important}
+.svcblock h2{font-size:clamp(32px,3.6vw,52px)!important}
+.story p{font-size:18px!important;line-height:1.65!important}
+.cq{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.25!important}
+.fc dd{font-size:16px!important}
+.hbox h3{font-size:clamp(24px,2.2vw,32px)!important}
+.tc h4,.tq h4{font-size:19px!important;line-height:1.3!important}
+.tq p{font-size:clamp(20px,2vw,28px)!important;line-height:1.4!important;font-weight:500!important}
+.pc h3,.card h3{letter-spacing:-.03em}
+.list li,.ol li,.ticks li{font-size:16px}
+.nomotion *{animation:none!important;transition:none!important}
+@media (max-width:960px){
+  .links{display:none}.mnav{display:block}
+  .head,.svcblock,.ftop{grid-template-columns:1fr}
+  .svcblock.flip .media{order:0}
+  .svcblock{padding:64px 0}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .kv{grid-template-columns:1fr}
+  .sec{padding-top:90px}
+}
+@media (max-width:600px){.pgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="dr {{motionClass}}" style="--accent: {{accent}}" onMouseMove="{{mm}}">
+<div class="cur" aria-hidden="true"></div><div class="prog" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="dp" fill-rule="evenodd" d="M39.68 155.62C54.98 155.62 67.65 151.79 75.77 145.81C89.64 134.33 99.68 111.63 99.68 85.81C99.68 47.56 83.19 12.19 39.44 12.19H12.91V155.62H39.68ZM40.64 167.8H10.52C4.54 167.8 0 165.41 0 158V9.8C0 3.1 3.34 0 10.76 0H38.96C90.83 0 112.58 36.81 112.58 84.61C112.58 132.19 87.73 167.8 40.64 167.8Z"></path></defs></svg>
+
+<header class="nav">
+<div class="wrap nav-in">
+<a class="brand" href="Main.dc.html" aria-label="Drops and People, início"><img src="/_blob/e9882f67d18494794b4afa651bc97ce4" alt="DROPS"></a>
+<nav class="links" aria-label="Principal">
+<a class="on" href="OQueFazemos.dc.html" aria-current="page">O que fazemos</a>
+<a href="Projetos.dc.html">Projetos</a>
+<a href="Palestras.dc.html">Palestras</a>
+<a href="Sobre.dc.html">Sobre</a>
+<a class="btn sm" href="Contato.dc.html" style="margin-left:12px">Vamos conversar</a>
+</nav>
+<details class="mnav"><summary>Menu</summary><nav aria-label="Menu móvel"><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a><a href="Contato.dc.html">Vamos conversar</a></nav></details>
+</div>
+</header>
+
+<main>
+<section class="phero">
+<div class="wrap in">
+<span class="pill">O que fazemos</span>
+<h1 class="ph1">Do planejamento à <span class="hl">entrega.</span></h1>
+<p class="p" style="max-width:640px">Criamos e executamos projetos de cultura, turismo e educação em três frentes: <strong>turismo e experiências, curadoria de eventos e projetos culturais e imersões, treinamentos e palestras.</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a class="btn" href="Contato.dc.html">Falar sobre um projeto</a><a class="btn ghost" href="Projetos.dc.html">Ver projetos</a></div>
+</div>
+<div class="car">
+<div class="car-track" onPointerDown="{{down}}" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerLeave="{{up}}" onClickCapture="{{clickCap}}">
+<a class="car-item" href="CaseCidade.dc.html" draggable="false"><img src="/_blob/06f30aa8e248991f9a1b5a631fd06b62" alt="A Cidade no Cinema" draggable="false"><span class="cap"><b>A Cidade no Cinema</b><span>Recife</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseCannes.dc.html" draggable="false"><img src="/_blob/90f95cf8f1b697cb8d1d6e3704e19103" alt="Frevo em Cannes" draggable="false"><span class="cap"><b>Frevo em Cannes</b><span>Cannes</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseEli.dc.html" draggable="false"><img src="/_blob/843429a304c79fc25ff25408e27c10db" alt="ELI Summit 2025" draggable="false"><span class="cap"><b>ELI Summit 2025</b><span>Natal</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseRecentro.dc.html" draggable="false"><img src="/_blob/333e99d2a87ab4e97ccee2afbec0136f" alt="Gabinete do Recentro" draggable="false"><span class="cap"><b>Gabinete do Recentro</b><span>Recife</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseRio.dc.html" draggable="false"><img src="/_blob/06fef3d8eb2a8a3cc64e479dace7251e" alt="Rio em Cena" draggable="false"><span class="cap"><b>Rio em Cena</b><span>Rio de Janeiro</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseJaboatao.dc.html" draggable="false"><img src="/_blob/21f348cdaec1d9c4f3146b2d0af7a3aa" alt="Controladoria de Jaboatão" draggable="false"><span class="cap"><b>Controladoria de Jaboatão</b><span>Jaboatão</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="Palestras.dc.html" draggable="false"><img src="/_blob/5659dfed08ce5b1a43b954c7cfbf5cdf" alt="Palestras" draggable="false"><span class="cap"><b>Palestras</b><span>HackTown 2026</span></span><span class="go" aria-hidden="true">↗</span></a>
+<a class="car-item" href="CaseCannes.dc.html" draggable="false"><img src="/_blob/5f99b341f66e3482cbeb9115c35b7daa" alt="Guerreiros do Passo" draggable="false"><span class="cap"><b>Guerreiros do Passo</b><span>Cannes</span></span><span class="go" aria-hidden="true">↗</span></a>
+</div>
+<div class="wrap car-ctrl"><span class="lbl">arraste para o lado ou use as setas</span><div style="display:flex;gap:8px"><button type="button" class="arw" aria-label="Anterior" onClick="{{prev}}"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 9H3M7 5L3 9l4 4"></path></svg></button><button type="button" class="arw" aria-label="Próximo" onClick="{{next}}"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h12M11 5l4 4-4 4"></path></svg></button></div></div>
+</div>
+</section>
+
+<section class="sec" style="position:relative">
+<div class="ghostword gh" aria-hidden="true">Serviços · Serviços</div>
+<div class="wrap" style="position:relative">
+<div class="head" style="padding-top:120px">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start"><span class="pill">Nossos serviços</span><h2 class="h2 hd">Três frentes, <span class="it">uma equipe.</span></h2></div>
+<p class="p rv"><strong>Cada projeto é desenhado sob medida,</strong> com um núcleo fixo de direção e especialistas da nossa rede escolhidos para cada desafio.</p>
+</div>
+
+<nav class="subnav" aria-label="Frentes"><a href="#turismo"><i>01</i>Turismo e experiências</a><a href="#curadoria"><i>02</i>Curadoria e projetos culturais</a><a href="#pessoas"><i>03</i>Imersões, treinamentos e palestras</a></nav>
+<article class="svcblock" id="turismo">
+<div class="media">
+<a href="CaseCidade.dc.html" class="tall pop"><img src="/_blob/680b3e96f306aad834a716dee1a279b6" alt="Adriana Garcia com megafone em ponto do roteiro A Cidade no Cinema" style="object-position:12% 50%"><span class="tagimg">A Cidade no Cinema · Recife</span><span class="ov"><span>Ver A Cidade no Cinema</span><i>↗</i></span></a>
+<a href="CaseCidade.dc.html" class="pop par"><img src="/_blob/258996c26327a146b94324c9da6dd19a" alt="Guia do roteiro dentro do ônibus"><span class="ov"><span>Ver A Cidade no Cinema</span><i>↗</i></span></a>
+<a href="CaseRio.dc.html" class="pop"><img src="/_blob/52151e18a119788fcc3a2444da476c42" alt="Material do Rio em Cena"><span class="tagimg">Rio em Cena · RJ</span><span class="ov"><span>Ver Rio em Cena</span><i>↗</i></span></a>
+</div>
+<div style="display:flex;flex-direction:column;gap:26px">
+<span class="num">01 / 03</span>
+<h2 class="hd">Turismo e experiências</h2>
+<p class="p">Roteiros e experiências que transformam história, memória e cinema em visita e planejamento da atividade turística para cidades e destinos.</p>
+<ul class="list rv"><li>Roteiros imersivos e cinematográficos, guiados ou com app</li><li>Experiências com geolocalização, áudio, realidade aumentada e gamificação</li><li>Planejamento turístico e apoio à formulação de políticas públicas</li><li>Qualificação de equipes e da cadeia do turismo local</li></ul>
+<dl class="kv"><dt>Para quem</dt><dd>Prefeituras, secretarias de turismo e cultura, destinos e festivais</dd></dl>
+<div class="chips"><a href="CaseCidade.dc.html">A Cidade no Cinema</a><a href="CaseRio.dc.html">Rio em Cena · Festival LED</a></div>
+</div>
+</article>
+
+<article class="svcblock flip" id="curadoria">
+<div class="media">
+<a href="CaseCannes.dc.html" class="tall pop"><img src="/_blob/90f95cf8f1b697cb8d1d6e3704e19103" alt="Frevo no tapete vermelho de Cannes"><span class="tagimg">Frevo em Cannes · 2025</span><span class="ov"><span>Ver Frevo em Cannes</span><i>↗</i></span></a>
+<a href="CaseCannes.dc.html" class="pop par"><img src="/_blob/a9dca9da1110a57dd3d729315a654f19" alt="Equipe de O Agente Secreto com os Guerreiros do Passo"><span class="ov"><span>Ver Frevo em Cannes</span><i>↗</i></span></a>
+<a href="CaseEli.dc.html" class="pop"><img src="/_blob/e078dd25dfb1b748016a0fbd1d814992" alt="Equipe no ELI Summit"><span class="tagimg">ELI Summit · Natal</span><span class="ov"><span>Ver ELI Summit 2025</span><i>↗</i></span></a>
+</div>
+<div style="display:flex;flex-direction:column;gap:26px">
+<span class="num">02 / 03</span>
+<h2 class="hd">Curadoria de eventos e projetos culturais</h2>
+<p class="p">Concebemos a programação e articulamos os parceiros para eventos e ações culturais.</p>
+<ul class="list rv"><li>Curadoria do evento</li><li>Articulação dos atores</li><li>Ativações culturais em festivais e lançamentos</li></ul>
+<dl class="kv"><dt>Para quem</dt><dd>Festivais, produtoras, empresas e instituições públicas e privadas</dd></dl>
+<div class="chips"><a href="CaseCannes.dc.html">O frevo no tapete vermelho</a><a href="CaseEli.dc.html">ELI Summit 2025</a></div>
+</div>
+</article>
+
+<article class="svcblock" id="pessoas">
+<div class="media">
+<a href="CaseRecentro.dc.html" class="tall pop"><img src="/_blob/333e99d2a87ab4e97ccee2afbec0136f" alt="Roda de conversa com servidores do Recentro"><span class="tagimg">Gabinete do Recentro · Recife</span><span class="ov"><span>Ver Gabinete do Recentro</span><i>↗</i></span></a>
+<a href="CaseJaboatao.dc.html" class="pop par"><img src="/_blob/2cd5f245604e86d4772f6f453ff2119c" alt="Mapa de Talentos da Controladoria de Jaboatão"><span class="ov"><span>Ver Controladoria de Jaboatão</span><i>↗</i></span></a>
+<a href="Palestras.dc.html" class="pop"><img src="/_blob/5659dfed08ce5b1a43b954c7cfbf5cdf" alt="Palestra no HackTown"><span class="tagimg">HackTown 2026</span><span class="ov"><span>Ver Palestras</span><i>↗</i></span></a>
+</div>
+<div style="display:flex;flex-direction:column;gap:26px">
+<span class="num">03 / 03</span>
+<h2 class="hd">Imersões, treinamentos e palestras</h2>
+<p class="p">Programas presenciais e a distância para equipes de empresas, desenhados a partir de um diagnóstico e com dinâmicas práticas.</p>
+<ul class="list rv"><li>Imersões e oficinas sob medida: comunicação, feedback, liderança e propósito</li><li>Diagnóstico de clima e facilitação de processos</li><li>Formação de servidores e lideranças</li><li>Palestras para eventos e encontros corporativos</li></ul>
+<dl class="kv"><dt>Para quem</dt><dd>RH e lideranças de empresas, gestão pública, universidades e eventos</dd></dl>
+<div class="chips"><a href="CaseRecentro.dc.html">Gabinete do Recentro</a><a href="CaseJaboatao.dc.html">Controladoria de Jaboatão</a><a href="Palestras.dc.html">Ver palestras</a></div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- PROCESSO (referência Nexro: cards com diagrama; aqui o diagrama é o próprio símbolo da Drops) -->
+<section class="wrap">
+<div class="process">
+<div class="center-head"><span class="pill">Como trabalhamos</span><h2 class="h2 hd">Quatro etapas, <span class="it">as mesmas do nosso símbolo.</span></h2><p class="p" style="max-width:620px">O símbolo da Drops nasce de um D que se espelha, se multiplica e gira. É também a ordem em que todo projeto acontece.</p></div>
+<div class="pgrid">
+<div class="pcard pop"><div class="dia"><svg class="sym f1" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><span class="lbl">01</span><h3>Escuta</h3><p>Reunião e diagnóstico: objetivo, público, prazo, orçamento e quem precisa aprovar.</p><span class="get">Você recebe: diagnóstico</span></div>
+<div class="pcard pop"><div class="dia"><svg class="sym f2" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d1"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><span class="lbl">02</span><h3>Conceito</h3><p>Proposta com formato, programação, cronograma, equipe e forma de medir o resultado.</p><span class="get">Você recebe: proposta técnica</span></div>
+<div class="pcard pop"><div class="dia"><svg class="sym f3" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d1"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d2"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d3"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><span class="lbl">03</span><h3>Rede</h3><p>Montamos o time e os parceiros: poder público, artistas, fornecedores e patrocinadores.</p><span class="get">Você recebe: equipe e parceiros</span></div>
+<div class="pcard pop"><div class="dia"><svg class="sym f4" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d1"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d2"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d3"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><span class="lbl">04</span><h3>Execução</h3><p>Produzimos e conduzimos o projeto até o fim, com registro e relatório do que foi feito.</p><span class="get">Você recebe: projeto realizado</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="center-head"><span class="lbl">[ formatos ]</span><h2 class="h2 hd">Os formatos <span class="it">mais pedidos.</span></h2></div>
+<div class="formats rv"><span>Palestra</span><span>Imersão</span><span>Projeto especial</span><span>Roteiro turístico</span><span>Experiência com app</span><span>Curadoria de evento</span><span>Oficina</span></div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="ctabox pop">
+<span class="lbl">[ próximo projeto ]</span>
+<h2 class="h2">Tem um território, um evento ou uma equipe <span class="it">em mente?</span></h2>
+<p class="p" style="max-width:560px">Conte o que você precisa e a gente marca uma conversa para entender o contexto.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a class="btn" href="Contato.dc.html">Começar uma conversa</a><a class="btn ghost" href="https://wa.me/5521991092001">WhatsApp (21) 99109-2001</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="foot on-dark">
+<div class="wrap">
+<div class="ftop">
+<p style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2;max-width:320px">Projetos de cultura, turismo e educação. Do papel à rua.</p>
+<div><h4>Navegação</h4><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a></div>
+<div><h4>Contato</h4><a href="mailto:adri@dropsbr.com">adri@dropsbr.com</a><a href="https://wa.me/5521991092001">WhatsApp (21) 99109-2001</a></div>
+<div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
+</div>
+<div class="bigmark bigword"><img src="/_blob/03a66f9292453bf7179903812399d3c5" alt="DROPS"></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#DF9330","options":["#DF9330","#E0612F","#F5BE3B","#141210"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const track = (e) => e.currentTarget.closest('.car').querySelector('.car-track');
+    return {
+      down: (e) => { if (e.pointerType !== 'mouse') return; this._d = { x: e.clientX, s: e.currentTarget.scrollLeft, m: false }; },
+      move: (e) => { if (!this._d) return; const dx = e.clientX - this._d.x; if (Math.abs(dx) > 5) { this._d.m = true; e.currentTarget.classList.add('dragging'); } e.currentTarget.scrollLeft = this._d.s - dx; },
+      up: (e) => { if (!this._d) return; e.currentTarget.classList.remove('dragging'); this._moved = this._d.m; this._d = null; },
+      clickCap: (e) => { if (this._moved) { e.preventDefault(); e.stopPropagation(); this._moved = false; } },
+      prev: (e) => track(e).scrollBy({ left: -320, behavior: 'smooth' }),
+      next: (e) => track(e).scrollBy({ left: 320, behavior: 'smooth' }),
+      mm: (e) => { const c = e.currentTarget.querySelector('.cur'); if (c) c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)'; },
+      accent: this.props.accent ?? '#DF9330',
+      motionClass: this.props.motion === false ? 'nomotion' : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

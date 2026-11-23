@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Drops · Palestras</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FCF8F3;color:#141210;font-family:'Inter Tight',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141210}a:hover{color:#9A5A0C}
+.dr *,.dr *::before,.dr *::after{box-sizing:border-box}
+.dr{--accent:#DF9330;--ink:#141210;--paper:#FCF8F3;--peach:#F9E7DA;--card:#F3EEE7;--mute:#5E574F;--line:rgba(20,18,16,.12);--warm:#9A5A0C;overflow-x:clip}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+h1,h2,h3,h4,p{margin:0}
+.lbl{font-family:'Geist Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.02em;color:var(--warm)}
+.on-dark .lbl{color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:500}
+.pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.on-dark .pill{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);color:var(--paper)}
+.ph1{font-size:clamp(52px,7.6vw,118px);line-height:.95;letter-spacing:-.045em;font-weight:700}
+.h2{font-size:clamp(38px,4.6vw,66px);line-height:1;letter-spacing:-.035em;font-weight:700}
+.it{font-style:italic;font-weight:inherit;letter-spacing:-.03em}
+.hl{background:var(--accent);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.p{font-size:18px;line-height:1.55;color:var(--mute);text-wrap:pretty}
+.on-dark .p{color:#CFC6BA}
+.nav{position:sticky;top:0;z-index:60;background:rgba(252,248,243,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:3px solid var(--accent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:30px;width:auto;display:block}
+.links{display:flex;align-items:center;gap:4px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:999px}
+.links a:hover,.links a.on{background:rgba(20,18,16,.06);color:var(--ink)}
+.mnav{display:none}
+.mnav summary{list-style:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:var(--accent);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav nav{position:absolute;right:16px;top:68px;background:var(--paper);border-radius:18px;padding:8px;display:flex;flex-direction:column;min-width:240px;box-shadow:0 24px 60px rgba(20,18,16,.18)}
+.mnav nav a{min-height:48px;display:flex;align-items:center;padding:0 14px;text-decoration:none;border-radius:12px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s,background .3s,box-shadow .3s,color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(223,147,48,.8);color:var(--ink)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1px rgba(20,18,16,.35)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
+.btn.dark{background:var(--ink);color:var(--paper)}
+.btn.dark:hover{background:var(--accent);color:var(--ink)}
+.on-dark .btn.ghost{box-shadow:inset 0 0 0 1px rgba(252,248,243,.4);color:var(--paper)}
+.btn.sm{min-height:44px;padding:0 20px}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes clipup{from{clip-path:inset(0 0 100% 0);transform:translateY(30px)}to{clip-path:inset(0 0 -10% 0);transform:none}}
+@keyframes popin{from{opacity:0;transform:translateY(60px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes slideL{from{transform:translateX(10%)}to{transform:translateX(-10%)}}
+@keyframes par{from{transform:translateY(-6%) scale(1.14)}to{transform:translateY(6%) scale(1.14)}}
+@keyframes bigup{from{transform:translateY(40%)}to{transform:none}}
+@supports (animation-timeline: view()){
+  .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .hd{animation:clipup linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .pop{animation:popin linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  .slide{animation:slideL linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .par img{animation:par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .bigword{animation:bigup linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+}
+.sec{padding:120px 0 0}
+.center-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:56px}
+.head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:56px}
+.phero{padding:88px 0 0;text-align:center}
+.phero .in{display:flex;flex-direction:column;align-items:center;gap:24px}
+.ctabox{position:relative;border-radius:32px;overflow:hidden;padding:clamp(48px,8vw,110px) 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;background:linear-gradient(rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(20,18,16,.06) 1px,transparent 1px) 0 0/48px 48px,radial-gradient(60% 80% at 50% 120%,rgba(223,147,48,.65),rgba(249,231,218,.4) 60%,rgba(252,248,243,0)),var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.ctabox .h2{font-size:clamp(42px,6vw,92px);max-width:980px}
+.foot{background:var(--ink);color:var(--paper);margin-top:120px;padding:72px 0 28px;overflow:hidden}
+.ftop{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot h4{font-family:'Geist Mono',monospace;font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#A59C90;margin-bottom:12px}
+.foot a{display:flex;align-items:center;min-height:34px;text-decoration:none;color:var(--paper);font-size:15px}
+.foot a:hover{color:var(--accent)}
+.bigmark{margin-top:80px}
+.bigmark img{width:100%;height:auto;display:block}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(252,248,243,.14);font-size:13px;color:#A59C90}
+/* página */
+.stage2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr) minmax(0,.7fr);gap:28px;align-items:center;margin-top:80px}
+.stage2 .ph{position:relative;height:560px;border-radius:28px;overflow:hidden}
+.stage2 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.stage2 .word{position:absolute;left:-10%;right:-10%;top:40%;font-size:clamp(70px,8.5vw,128px);font-weight:800;letter-spacing:-.05em;line-height:1;color:#fff;mix-blend-mode:overlay;text-align:center;text-transform:uppercase;pointer-events:none;white-space:nowrap}
+.stage2 .side{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.stage2 .side .sm{width:100%;height:240px;border-radius:24px;overflow:hidden}
+.stage2 .side .sm img{width:100%;height:100%;object-fit:cover}
+.roundbtn{width:72px;height:72px;border-radius:50%;background:var(--accent);display:grid;place-items:center;text-decoration:none;transition:transform .4s}
+.roundbtn:hover{transform:rotate(45deg) scale(1.06)}
+.ticks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.ticks li{display:flex;gap:10px;font-size:16px;line-height:1.45}
+.ticks li::before{content:'';flex:none;width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--accent)}
+.fmts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fmt{background:#fff;border-radius:26px;padding:30px;display:flex;flex-direction:column;gap:18px;box-shadow:inset 0 0 0 1px var(--line);transition:transform .4s,box-shadow .4s}
+.fmt:hover{transform:translateY(-6px);box-shadow:inset 0 0 0 1px var(--accent),0 30px 50px -30px rgba(20,18,16,.4)}
+.fmt.hot{background:var(--ink);color:var(--paper)}
+.fmt h3{font-size:34px;letter-spacing:-.04em;font-weight:700}
+.fmt p{font-size:16px;line-height:1.55;color:var(--mute)}
+.fmt.hot p{color:#CFC6BA}
+.fmt ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+.fmt.hot ul{border-color:rgba(252,248,243,.16)}
+.fmt li{display:flex;gap:10px;font-size:15px;line-height:1.45}
+.fmt li::before{content:'✓';color:var(--accent);font-weight:700}
+.fmt .btn{margin-top:auto;align-self:flex-start}
+.tracks{display:flex;flex-direction:column;gap:16px}
+.track{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:40px;background:var(--card);border-radius:28px;padding:36px}
+.track h3{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.035em;font-weight:700;line-height:1.05}
+.track .for{font-size:15px;color:var(--mute);line-height:1.5}
+.talks{display:flex;flex-direction:column}
+.talk{display:grid;grid-template-columns:40px minmax(0,1fr) 44px;gap:16px;align-items:center;padding:18px 0;border-top:1px solid rgba(20,18,16,.12);text-decoration:none;transition:padding .3s}
+.talk:first-child{border-top:0}
+.talk:hover{padding-left:10px}
+.talk .n{font-family:'Geist Mono',monospace;font-size:13px;color:var(--warm)}
+.talk b{display:block;font-size:20px;font-weight:700;letter-spacing:-.02em}
+.talk span.d{display:block;font-size:15px;line-height:1.45;color:var(--mute);margin-top:4px}
+.talk .go{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:background .3s,transform .3s}
+.talk:hover .go{background:var(--accent);transform:rotate(45deg)}
+.sig{font-family:'Geist Mono',monospace;font-size:11px;padding:3px 8px;border-radius:999px;background:var(--accent);margin-left:8px;vertical-align:middle;font-weight:400}
+.been{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.been span{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:18px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.st{border-radius:24px;padding:28px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:12px}
+.st .n{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-weight:800}
+.st h3{font-size:24px;letter-spacing:-.025em;font-weight:700}
+.st p{font-size:16px;line-height:1.5;color:var(--mute)}
+.tqs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tq{background:#fff;border-radius:22px;padding:28px;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:18px}
+.tq h4{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.tq .by{display:flex;gap:12px;align-items:center;padding-top:14px;border-top:1px solid var(--line);margin-top:auto}
+.tq .by img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.tq .by b{display:block;font-size:14px;font-weight:700}
+.tq .by span{display:block;font-size:12.5px;color:var(--mute)}
+.free{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;background:var(--accent);border-radius:28px;padding:36px;text-decoration:none;color:var(--ink);transition:transform .4s,box-shadow .4s}
+.free:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(20,18,16,.5);color:var(--ink)}
+.free h3{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.035em;font-weight:700;line-height:1.05}
+.free p{font-size:17px;line-height:1.5;max-width:620px}
+/* textura, cursor e interações globais */
+.dr::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:150;background-image:url(/_blob/bbd31351c8358eab4c4ff8c67d44d5d0);background-size:220px 220px;opacity:.09;mix-blend-mode:multiply}
+.hl{background:linear-gradient(180deg,transparent 58%,var(--accent) 58%,var(--accent) 94%,transparent 94%)!important;padding:0 .04em!important}
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:300;mix-blend-mode:multiply;transform:translate(-100px,-100px);transition:width .3s,height .3s,margin .3s,opacity .3s}
+.dr:has(a:hover) .cur,.dr:has(button:hover) .cur,.dr:has(summary:hover) .cur{width:64px;height:64px;margin:-32px 0 0 -32px;opacity:.45}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--ink);transform:translateY(102%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.btn:hover::after{transform:none}
+.btn:hover{color:var(--paper)!important}
+.btn.dark::after{background:var(--accent)}
+.btn.dark:hover{color:var(--ink)!important}
+.prog{position:fixed;left:0;top:0;right:0;height:3px;background:var(--ink);transform-origin:left;transform:scaleX(0);z-index:80;pointer-events:none}
+@keyframes prog{to{transform:scaleX(1)}}
+@supports (animation-timeline: scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root block)}}
+/* hierarquia tipográfica (escala única do site) */
+.h1,.ph1{font-size:clamp(46px,6vw,96px)!important;line-height:.96!important;letter-spacing:-.045em!important;font-weight:500!important;text-wrap:balance}
+.h1 .hl,.ph1 .hl{font-weight:800}
+.ch1{font-size:clamp(46px,6.6vw,108px)!important;line-height:.93!important;letter-spacing:-.05em!important;font-weight:800!important;text-wrap:balance}
+.h2{font-size:clamp(34px,3.9vw,56px)!important;line-height:1.04!important;letter-spacing:-.035em!important;font-weight:700!important;text-wrap:balance}
+.ctabox .h2,.end .h2{font-size:clamp(40px,5.2vw,78px)!important}
+.cannes .h2,.feat h2{font-size:clamp(38px,5vw,78px)!important}
+.it{font-weight:inherit}
+.h2 .it,.ctabox .it{font-weight:inherit}
+h3{text-wrap:balance}
+.p{font-size:17px;line-height:1.62;color:#5E574F}
+.phero .p,.intro .p,.head .p,.center-head .p,.ctabox .p{font-size:19px!important;line-height:1.55!important;color:#3D362F!important}
+.on-dark .p,.on-dark .head .p{color:#CFC6BA!important}
+.p strong,.p b{color:var(--ink);font-weight:600}
+.on-dark .p strong{color:var(--paper)}
+.lbl{font-size:12px!important;font-weight:500;letter-spacing:.07em!important;text-transform:uppercase}
+.pill{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.step h3{font-size:clamp(28px,2.6vw,40px)!important}
+.step p{font-size:18px!important}
+.si{font-size:clamp(28px,3.2vw,48px)}
+.svcblock h2,.track h3,.story h3{font-size:clamp(26px,2.6vw,40px)!important;line-height:1.06!important}
+.svcblock h2{font-size:clamp(32px,3.6vw,52px)!important}
+.story p{font-size:18px!important;line-height:1.65!important}
+.cq{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.25!important}
+.fc dd{font-size:16px!important}
+.hbox h3{font-size:clamp(24px,2.2vw,32px)!important}
+.tc h4,.tq h4{font-size:19px!important;line-height:1.3!important}
+.tq p{font-size:clamp(20px,2vw,28px)!important;line-height:1.4!important;font-weight:500!important}
+.pc h3,.card h3{letter-spacing:-.03em}
+.list li,.ol li,.ticks li{font-size:16px}
+.nomotion *{animation:none!important;transition:none!important}
+@media (max-width:960px){
+  .links{display:none}.mnav{display:block}
+  .head,.stage2,.fmts,.track,.steps,.tqs,.ftop{grid-template-columns:1fr}
+  .stage2 .ph{height:420px}
+}
+@media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div class="dr {{motionClass}}" style="--accent: {{accent}}" onMouseMove="{{mm}}">
+<div class="cur" aria-hidden="true"></div><div class="prog" aria-hidden="true"></div>
+<header class="nav">
+<div class="wrap nav-in">
+<a class="brand" href="Main.dc.html" aria-label="Drops and People, início"><img src="/_blob/e9882f67d18494794b4afa651bc97ce4" alt="DROPS"></a>
+<nav class="links" aria-label="Principal">
+<a href="OQueFazemos.dc.html">O que fazemos</a>
+<a href="Projetos.dc.html">Projetos</a>
+<a class="on" href="Palestras.dc.html" aria-current="page">Palestras</a>
+<a href="Sobre.dc.html">Sobre</a>
+<a class="btn sm" href="Contato.dc.html" style="margin-left:12px">Vamos conversar</a>
+</nav>
+<details class="mnav"><summary>Menu</summary><nav aria-label="Menu móvel"><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a><a href="Contato.dc.html">Vamos conversar</a></nav></details>
+</div>
+</header>
+
+<main>
+<section class="phero">
+<div class="wrap in">
+<span class="pill">Palestras e imersões</span>
+<h1 class="ph1">Palestras que viram <span class="hl">prática.</span></h1>
+<p class="p" style="max-width:660px">A Drops transforma experiências reais, do Recife Antigo ao frevo em Cannes, em aprendizados e conexões que inspiram empresas, eventos e órgãos públicos, por meio de <strong>palestras, imersões e oficinas.</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a class="btn" href="Contato.dc.html">Levar para o meu evento</a><a class="btn ghost" href="#temas">Ver temas</a></div>
+</div>
+<div class="wrap stage2">
+<div style="display:flex;flex-direction:column;gap:20px;text-align:left">
+<span class="lbl">[ palestra assinatura · hacktown 2026 ]</span>
+<h2 class="h2 hd" style="font-size:clamp(34px,3.6vw,52px)">Criatividade, coragem e a arte de fazer <span class="it">acontecer.</span></h2>
+<p class="p" style="font-size:16px">Quantas vezes você teve uma boa ideia e não fez nada com ela? Uma conversa sobre como ideias viram projeto, com exemplos do carnaval do Recife, da revitalização do Recife Antigo e do frevo em Cannes.</p>
+<ul class="ticks"><li>Criatividade como conexão, não como dom individual</li><li>O espaço público como plataforma de inovação</li><li>Da ideia à execução: coragem para fazer existir</li></ul>
+</div>
+<div class="ph par pop"><img src="/_blob/5659dfed08ce5b1a43b954c7cfbf5cdf" alt="Adriana Garcia palestrando no HackTown"></div>
+<div class="side">
+<div class="sm pop"><img src="/_blob/6ec678628d1126710a77f5054cc17cd7" alt="Adriana Garcia conduzindo encontro com o Gabinete do Recentro"></div>
+<a class="roundbtn" href="Contato.dc.html" aria-label="Contratar palestra"><svg width="20" height="20" viewBox="0 0 12 12" fill="none" stroke="#141210" stroke-width="1.6" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"></path></svg></a>
+<p style="font-size:14px;line-height:1.5;color:#5E574F;text-align:left">Foto principal: Divulgação HackTown. Foto menor: Gabinete do Recentro, Recife.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="t-fmt">
+<div class="wrap">
+<div class="center-head"><span class="pill">Formatos</span><h2 id="t-fmt" class="h2 hd">Escolha o formato <span class="it">do seu evento.</span></h2><p class="p" style="max-width:600px">Todos os formatos são adaptados ao público e ao objetivo do evento.</p></div>
+<div class="fmts">
+<div class="fmt pop"><span class="lbl">01</span><h3>Palestra</h3><p>Para congressos, festivais e encontros corporativos. Conteúdo inspirador com exemplos reais de projetos.</p><ul><li>Para públicos de todos os tamanhos e perfis</li><li>Tema ajustado ao objetivo do evento</li><li>Nove temas à escolha ou um tema sob medida</li></ul><a class="btn ghost" href="Contato.dc.html">Pedir proposta</a></div>
+<div class="fmt hot pop"><span class="lbl" style="color:#DF9330">02</span><h3>Imersão</h3><p>Para equipes e lideranças. Começa com um diagnóstico e combina conteúdo, dinâmicas e construção coletiva.</p><ul><li>Desenhada para a sua equipe</li><li>Diagnóstico antes do encontro</li><li>Entrega um plano ou acordo do grupo</li></ul><a class="btn" href="Contato.dc.html">Pedir proposta</a></div>
+<div class="fmt pop"><span class="lbl">03</span><h3>Oficina</h3><p>Para eventos e programas de formação. Grupos menores, mão na massa, com um tema específico.</p><ul><li>Grupos pequenos</li><li>Foco em prática</li><li>Pode compor a programação de um evento</li></ul><a class="btn ghost" href="Contato.dc.html">Pedir proposta</a></div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="temas" aria-labelledby="t-temas">
+<div class="wrap">
+<div class="head">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start"><span class="pill">Temas</span><h2 id="t-temas" class="h2 hd">Nove temas, três trilhas <span class="it">e um tema livre.</span></h2></div>
+<p class="p rv"><strong>Todas as palestras são assinatura de Adriana Garcia.</strong> Cada tema é adaptado ao público e ao objetivo do evento.</p>
+</div>
+<div class="tracks">
+<div class="track pop">
+<div style="display:flex;flex-direction:column;gap:14px"><span class="lbl">[ trilha 01 ]</span><h3>Liderança e mudança</h3><p class="for">Para lideranças e gestores que conduzem equipes em processos de transformação.</p></div>
+<div class="talks">
+<a class="talk" href="Contato.dc.html"><span class="n">01</span><span><b>Mudar é humano e necessário</b><span class="d">Como conduzir transformações lidando com resistências e emoções.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">02</span><span><b>Liderança que humaniza</b><span class="d">Empatia, escuta e consciência emocional como base da liderança.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">03</span><span><b>O futuro do trabalho</b><span class="d">Pessoas, propósito e novas formas de liderar: competências, autonomia, tecnologia e adaptação.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+</div>
+</div>
+<div class="track pop">
+<div style="display:flex;flex-direction:column;gap:14px"><span class="lbl">[ trilha 02 ]</span><h3>Comunicação e cuidado com as pessoas</h3><p class="for">Para equipes que precisam melhorar a comunicação, o clima e a confiança.</p></div>
+<div class="talks">
+<a class="talk" href="Contato.dc.html"><span class="n">04</span><span><b>Comunicação que conecta</b><span class="d">Comunicação assertiva, escuta ativa e feedback para fortalecer equipes.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">05</span><span><b>Cuidar de quem cuida</b><span class="d">Saúde emocional de líderes e a responsabilidade de criar ambientes mais humanos.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">06</span><span><b>Quem sou eu no trabalho?</b><span class="d">Autoconhecimento como ferramenta de liderança, com reflexões e dinâmicas.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+</div>
+</div>
+<div class="track pop">
+<div style="display:flex;flex-direction:column;gap:14px"><span class="lbl">[ trilha 03 ]</span><h3>Criatividade, propósito e inovação</h3><p class="for">Para eventos de inovação, empresas e instituições de ensino.</p></div>
+<div class="talks">
+<a class="talk" href="Contato.dc.html"><span class="n">07</span><span><b>Criatividade, coragem e a arte de fazer acontecer</b><span class="d">A trajetória de projetos improváveis, do Recife Antigo ao frevo em Cannes.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">08</span><span><b>Propósito: a história que nos une</b><span class="d">Como ligar o que motiva as pessoas aos objetivos da organização.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+<a class="talk" href="Contato.dc.html"><span class="n">09</span><span><b>O novo perfil do profissional</b><span class="d">Inovação e humanização: profissionais mais estratégicos, colaborativos e criativos.</span></span><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
+</div>
+</div>
+<a class="free pop" href="Contato.dc.html">
+<div style="display:flex;flex-direction:column;gap:14px"><span class="lbl" style="color:#141210">[ tema livre ]</span><h3>Precisa de outro tema?</h3><p>Criamos com você um conteúdo novo, a partir do público, do momento da organização e do objetivo do evento.</p></div>
+<span class="btn dark">Criar um tema sob medida</span>
+</a>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="t-dep">
+<div class="wrap">
+<div class="tqs">
+<figure class="tq pop" style="margin:0"><span class="lbl">Controladoria de Jaboatão</span><h4>“A palestra de Adriana Garcia foi inspiradora e nos trouxe uma reflexão necessária sobre o novo perfil do servidor público. Saímos desse encontro com o coração cheio de inspiração e com a mente aberta para novos caminhos, certos de que, quando unimos inovação, empatia e compromisso social, fortalecemos não apenas a Controladoria, mas toda a sociedade.”</h4><figcaption class="by"><img src="/_blob/549a62f2d4a14bbffeba20a8a55861eb" alt=""><div><b>Pricylla Lopes</b><span>Controladoria Geral do Jaboatão</span></div></figcaption></figure>
+<figure class="tq pop" style="margin:0"><span class="lbl">HackTown · Clear Purpose</span><h4>“Uma impressionante capacidade de atuar sob pressão sem perder a qualidade, a clareza e o cuidado com as pessoas envolvidas.”</h4><figcaption class="by"><img src="/_blob/4dea0c9c498b0b49ae1dfc072dac5616" alt=""><div><b>Marcos David</b><span>Cofundador HackTown · Business Designer, Clear Purpose</span></div></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="t-como">
+<div class="wrap">
+<div class="center-head"><span class="pill">Como contratar</span><h2 id="t-como" class="h2 hd">Em três <span class="it">passos.</span></h2></div>
+<div class="steps">
+<div class="st pop"><span class="n">1</span><h3>Conte o evento</h3><p>Público, data, cidade e o objetivo do encontro.</p></div>
+<div class="st pop"><span class="n">2</span><h3>Definimos juntos tema e formato</h3><p>Numa conversa com você, escolhemos o tema (da lista ou um novo) e o formato: palestra, imersão ou oficina.</p></div>
+<div class="st pop"><span class="n">3</span><h3>Proposta e agenda</h3><p>Ajustamos o conteúdo com a sua equipe, enviamos a proposta e reservamos a data.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="ctabox pop">
+<span class="lbl">[ seu evento ]</span>
+<h2 class="h2">Leve uma palestra para <span class="it">o seu evento.</span></h2>
+<p class="p" style="max-width:560px">Conte o público e a data. A gente indica o melhor formato.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a class="btn" href="Contato.dc.html">Pedir proposta</a><a class="btn ghost" href="https://wa.me/5521991092001">WhatsApp (21) 99109-2001</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="foot on-dark">
+<div class="wrap">
+<div class="ftop">
+<p style="font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2;max-width:320px">Projetos de cultura, turismo e educação. Do papel à rua.</p>
+<div><h4>Navegação</h4><a href="OQueFazemos.dc.html">O que fazemos</a><a href="Projetos.dc.html">Projetos</a><a href="Palestras.dc.html">Palestras</a><a href="Sobre.dc.html">Sobre</a></div>
+<div><h4>Contato</h4><a href="mailto:adri@dropsbr.com">adri@dropsbr.com</a><a href="https://wa.me/5521991092001">WhatsApp (21) 99109-2001</a></div>
+<div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
+</div>
+<div class="bigmark bigword"><img src="/_blob/03a66f9292453bf7179903812399d3c5" alt="DROPS"></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#DF9330","options":["#DF9330","#E0612F","#F5BE3B","#141210"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      mm: (e) => { const c = e.currentTarget.querySelector('.cur'); if (c) c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)'; },
+      accent: this.props.accent ?? '#DF9330',
+      motionClass: this.props.motion === false ? 'nomotion' : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

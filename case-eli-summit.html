@@ -156,6 +156,25 @@ h3{text-wrap:balance}
   .gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1 / -1;order:-1}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+.bx.orange{display:flex;flex-direction:column}
+.bx.orange .minis{flex:1;grid-auto-rows:1fr}
+.bx.orange .mini{display:flex;flex-direction:column;justify-content:flex-end}
+.bx.orange .mini b{font-size:clamp(56px,6vw,88px)}
+.bx.orange .mini span{font-size:16px}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -183,17 +202,17 @@ h3{text-wrap:balance}
 <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill">Curadoria de eventos</span><span class="pill">Imersões</span><span class="pill">Natal, RN · 2025</span></div>
 <h1 class="ch1 hd">ELI Summit 2025</h1>
 </div>
-<p class="cq rv">“Como fazer 700 pessoas de 25 estados aprenderem umas com as outras?”</p>
+<p class="cq rv">“Como fazer pessoas de 25 estados aprenderem umas com as outras?”</p>
 </section>
 </div>
 
-<div class="bleed grow" role="img" aria-label="Equipe de organização no palco do ELI Summit 2025"><img src="/assets/94f0a215e5267e057edb029b2a7b7d40.webp" alt=""></div>
+<div class="bleed grow" role="img" aria-label="Equipe de organização no palco do ELI Summit 2025"><img src="/assets/e078dd25dfb1b748016a0fbd1d814992.webp" alt=""></div>
 
 <div class="wrap">
 <dl class="ficha">
 <div class="fc pop"><dt>Local</dt><dd>Centro de Convenções de Natal, RN</dd></div>
 <div class="fc pop"><dt>Data</dt><dd>4 a 6 de novembro de 2025</dd></div>
-<div class="fc pop"><dt>Papel da Drops</dt><dd>Oficinas, organização, curadoria e apresentação de cases</dd></div>
+<div class="fc pop"><dt>Papel da Drops</dt><dd>Organização e articulação das oficinas. Preparação, estruturação e organização dos cases de ecossistemas</dd></div>
 <div class="fc pop"><dt>Parceiros</dt><dd>Clear Purpose e Sebrae</dd></div>
 </dl>
 
@@ -201,27 +220,23 @@ h3{text-wrap:balance}
 <div class="bento">
 <div class="bx pop">
 <span class="lbl">[ números do projeto ]</span>
-<div class="bigstat"><span class="lbl">participantes</span><span class="n">700+</span><span class="p" style="font-size:16px">Líderes, gestores e especialistas em ecossistemas locais de inovação.</span></div>
+<div class="bigstat"><span class="lbl">estados representados</span><span class="n">25</span><span class="p" style="font-size:16px">Gestores, lideranças e especialistas que fazem a inovação acontecer nos municípios.</span></div>
 </div>
 <div class="bx orange pop">
-<div class="minis" style="grid-template-columns:1fr"><div class="mini"><b>25</b><span>estados representados</span></div><div class="mini"><b>15</b><span>oficinas conduzidas pela Drops</span></div><div class="mini"><b>30</b><span>cases de ecossistemas locais curados e apresentados</span></div></div>
+<div class="minis" style="grid-template-columns:1fr"><div class="mini"><b>15</b><span>oficinas</span></div><div class="mini"><b>30</b><span>cases de ecossistemas locais</span></div></div>
 </div>
 </div>
 </section>
 
 <section class="sec" aria-label="O case">
-<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>O encontro</h3><p class="p">O ELI Summit é o principal encontro nacional sobre Ecossistemas Locais de Inovação. Reuniu em Natal, por três dias, pessoas que fazem inovação acontecer em municípios de todo o país.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Juntar 700 pessoas de 25 estados no mesmo lugar não garante troca. O desafio era fazer o evento funcionar como aprendizagem entre pares, e não como uma sequência de palestras.</p></div></div>
-<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">A convite da Clear Purpose, numa iniciativa do Sebrae, a Drops conduziu 15 oficinas e coordenou a organização, a curadoria e a apresentação de 30 cases de ecossistemas locais.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p><span class="todo">[INSERIR: avaliação dos participantes ou desdobramentos do evento]</span></p></div></div>
+<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>O encontro</h3><p class="p">O ELI Summit é o encontro nacional de ecossistemas locais de inovação, promovido pelo Sebrae. Em 2025, aconteceu em Natal, de 4 a 6 de novembro, e reuniu quem faz inovação acontecer em municípios de todo o país.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Reunir gente de 25 estados no mesmo lugar não garante troca. O desafio era fazer o evento funcionar como aprendizagem entre pares, e não como uma sequência de palestras.</p></div></div>
+<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">A convite da Clear Purpose e por iniciativa do Sebrae, a Drops atuou na organização e articulação das 15 oficinas e na preparação e organização de 30 cases de ecossistemas locais.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">O ELI Summit deixou como legado a conexão entre diferentes atores dos ecossistemas, a valorização de iniciativas locais e a troca de conhecimentos e experiências, fortalecendo a colaboração e a construção de novas oportunidades de desenvolvimento e inovação.</p></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal">
-<figure class="pop par" style="height:420px"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt="Totem do ELI Summit"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/1a3f56bf28ee723b1dc7607225e5096e.webp" alt="Equipe diante do telão do ELI Summit"></figure>
-<figure class="pop par" style="height:420px"><img src="/assets/c18d70229216a6bae539f95107579d4b.webp" alt="Equipe de organização do ELI Summit"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/dd2267af7199d70bc2d52ce0dca1aa3f.webp" alt="Adriana Garcia no ELI Summit" loading="lazy"></figure><figure class="gx"><img src="/assets/9f06a963198216e9e84355bc577344d7.webp" alt="Oficina no ELI Summit" loading="lazy"></figure><figure class="gx"><img src="/assets/4ededf1e13fc096982e981ec4e102461.webp" alt="Equipe de organização do ELI Summit" loading="lazy"></figure><figure class="gx"><img src="/assets/27b7316f87d406108479c3b8d2f3a78f.webp" alt="Plenária do ELI Summit" loading="lazy"></figure><figure class="gx"><img src="/assets/cd56baa4e447d0907f2252b749e5d49d.webp" alt="Espaço de oficinas do ELI Summit" loading="lazy"></figure><figure class="gx"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt="Totem do ELI Summit" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/dd2267af7199d70bc2d52ce0dca1aa3f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/9f06a963198216e9e84355bc577344d7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/4ededf1e13fc096982e981ec4e102461.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/27b7316f87d406108479c3b8d2f3a78f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/cd56baa4e447d0907f2252b749e5d49d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/dd2267af7199d70bc2d52ce0dca1aa3f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/9f06a963198216e9e84355bc577344d7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/4ededf1e13fc096982e981ec4e102461.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/27b7316f87d406108479c3b8d2f3a78f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/cd56baa4e447d0907f2252b749e5d49d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/dd2267af7199d70bc2d52ce0dca1aa3f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/9f06a963198216e9e84355bc577344d7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/4ededf1e13fc096982e981ec4e102461.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/27b7316f87d406108479c3b8d2f3a78f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/cd56baa4e447d0907f2252b749e5d49d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt="" loading="lazy"></figure></div></div>
 </section>
 
 <section class="sec" aria-label="Depoimento">
@@ -238,7 +253,7 @@ h3{text-wrap:balance}
 <section class="sec">
 <a class="next" href="/case-cidade-no-cinema">
 <div style="display:flex;flex-direction:column;gap:16px"><span class="lbl">[ próximo projeto ]</span><h2>A Cidade no Cinema ↗</h2></div>
-<div class="im"><img src="/assets/c224086132eb711f684c54145f7ce7da.webp" alt=""></div>
+<div class="im"><img src="/assets/06f30aa8e248991f9a1b5a631fd06b62.webp" alt=""></div>
 </a>
 </section>
 
@@ -262,7 +277,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -281,6 +296,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

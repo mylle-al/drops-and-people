@@ -158,6 +158,24 @@ h3{text-wrap:balance}
   .story{grid-template-columns:1fr;gap:10px}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+/* temas preenchendo o quadro */
+.hbox.or{display:flex;flex-direction:column}
+.themes{flex:1;grid-auto-rows:1fr}
+.themes span{display:flex;align-items:flex-end;min-height:110px;font-size:clamp(24px,2.4vw,34px)!important;padding:22px!important}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -173,24 +191,24 @@ h3{text-wrap:balance}
 
 <main>
 <div class="wrap">
-<nav class="crumbs" aria-label="Você está em"><a href="/projetos">Projetos</a><span aria-hidden="true">/</span><span>Imersão com servidores de Jaboatão</span></nav>
+<nav class="crumbs" aria-label="Você está em"><a href="/projetos">Projetos</a><span aria-hidden="true">/</span><span>Imersão com servidores de Jaboatão dos Guararapes</span></nav>
 <section class="chero">
 <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
 <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill">Imersões e treinamentos</span><span class="pill">Jaboatão dos Guararapes, PE · 2025</span></div>
-<h1 class="ch1 hd">Imersão com servidores de Jaboatão</h1>
+<h1 class="ch1 hd">Imersão com servidores de Jaboatão dos Guararapes</h1>
 </div>
 <p class="cq rv">“Como unir inovação, propósito e serviço público?”</p>
 </section>
 </div>
 
-<div class="bleed grow" role="img" aria-label="Servidores da Controladoria de Jaboatão reunidos durante a imersão"><img src="/assets/215c5731501af18f20c4b1bf0da35385.webp" alt=""></div>
+<div class="bleed grow" role="img" aria-label="Servidores da Controladoria de Jaboatão reunidos durante a imersão"><img src="/assets/21f348cdaec1d9c4f3146b2d0af7a3aa.webp" alt=""></div>
 
 <div class="wrap">
 <dl class="ficha">
 <div class="fc pop"><dt>Local</dt><dd>Jaboatão dos Guararapes, PE</dd></div>
 <div class="fc pop"><dt>Data</dt><dd>Setembro de 2025</dd></div>
 <div class="fc pop"><dt>Papel da Drops</dt><dd>Concepção e condução da imersão com os servidores</dd></div>
-<div class="fc pop"><dt>Parceiro</dt><dd>Controladoria Geral do Município de Jaboatão dos Guararapes</dd></div>
+<div class="fc pop"><dt>Cliente</dt><dd>Controladoria Geral do Município de Jaboatão dos Guararapes</dd></div>
 </dl>
 
 <section class="sec" aria-label="Destaques">
@@ -201,17 +219,14 @@ h3{text-wrap:balance}
 </section>
 
 <section class="sec" aria-label="O case">
-<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A equipe</h3><p class="p">A Controladoria Geral do Município de Jaboatão dos Guararapes queria fortalecer as competências técnicas e humanas da sua equipe de gestão pública.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Unir inovação, propósito e serviço público numa equipe técnica, com o dia a dia cheio de demandas.</p></div></div>
-<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Com a consultora Adriana Garcia, a Drops concebeu e conduziu a imersão: acolhimento, autoconhecimento, reflexão sobre o papel do servidor, uma palestra sobre propósito coletivo e a criação do Mapa de Talentos da Controladoria.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">Os servidores participaram ativamente. Segundo as percepções registradas, a imersão aumentou a confiança, a cumplicidade e a motivação da equipe, e virou ponto de partida para o planejamento da Controladoria.</p></div></div>
+<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A equipe</h3><p class="p">A Controladoria Geral do Município de Jaboatão dos Guararapes buscava fortalecer as competências técnicas e humanas da sua equipe de gestão pública.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Unir inovação, propósito e serviço público em uma equipe técnica, com o dia a dia cheio de demandas e responsabilidades.</p></div></div>
+<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Sob a consultoria de Adriana Garcia, a Drops concebeu e conduziu um dia de imersão com a equipe, a partir dos quatro temas centrais: inovação, ousadia, criatividade e propósito.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">Segundo as percepções registradas, a imersão aumentou a confiança, a cumplicidade e a motivação da equipe, e virou ponto de partida para o planejamento da Controladoria.</p></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal2">
-<figure class="pop par" style="height:460px"><img src="/assets/58f77a2b789a2c92293d3405100e1c46.webp" alt="Adriana Garcia com servidores da Controladoria"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/bb9d5bfef308499f18be3081a381c478.webp" alt="Mapa de Talentos criado pela equipe"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/8e884b322b9261a94e30ea339e0a6ae9.webp" alt="Adriana Garcia com servidores da Controladoria" loading="lazy"></figure><figure class="gx"><img src="/assets/2cd5f245604e86d4772f6f453ff2119c.webp" alt="Mapa de Talentos criado pela equipe" loading="lazy"></figure><figure class="gx"><img src="/assets/182e4bfa99a1256479bbea27481a324b.webp" alt="Servidores durante a imersão" loading="lazy"></figure><figure class="gx"><img src="/assets/ffeabe94e74a8df68e05ff8c9437075a.webp" alt="Equipe na sala da imersão" loading="lazy"></figure><figure class="gx"><img src="/assets/8cfb9e952d63b5d68569f4a7dbf43573.webp" alt="Palestra durante a imersão" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8e884b322b9261a94e30ea339e0a6ae9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/2cd5f245604e86d4772f6f453ff2119c.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/182e4bfa99a1256479bbea27481a324b.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/ffeabe94e74a8df68e05ff8c9437075a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8cfb9e952d63b5d68569f4a7dbf43573.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8e884b322b9261a94e30ea339e0a6ae9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/2cd5f245604e86d4772f6f453ff2119c.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/182e4bfa99a1256479bbea27481a324b.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/ffeabe94e74a8df68e05ff8c9437075a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8cfb9e952d63b5d68569f4a7dbf43573.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8e884b322b9261a94e30ea339e0a6ae9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/2cd5f245604e86d4772f6f453ff2119c.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/182e4bfa99a1256479bbea27481a324b.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/ffeabe94e74a8df68e05ff8c9437075a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8cfb9e952d63b5d68569f4a7dbf43573.webp" alt="" loading="lazy"></figure></div></div>
 </section>
 
 <section class="sec" aria-label="Depoimento">
@@ -219,7 +234,7 @@ h3{text-wrap:balance}
 <img class="av" src="/assets/549a62f2d4a14bbffeba20a8a55861eb.webp" alt="">
 <div style="display:flex;flex-direction:column;gap:24px">
 <span class="lbl" style="color:#DF9330">[ depoimento ]</span>
-<blockquote style="margin:0"><p>“A palestra de Adriana Garcia foi inspiradora e nos trouxe uma reflexão necessária…”</p></blockquote>
+<blockquote style="margin:0"><p>“A palestra de Adriana Garcia foi inspiradora e nos trouxe uma reflexão necessária sobre o novo perfil do servidor público. Saímos desse encontro com o coração cheio de inspiração e com a mente aberta para novos caminhos, certos de que, quando unimos inovação, empatia e compromisso social, fortalecemos não apenas a Controladoria, mas toda a sociedade.”</p></blockquote>
 <figcaption><b>Pricylla Lopes</b><span style="display:block;color:#CFC6BA;margin-top:4px">Controladoria Geral do Jaboatão</span></figcaption>
 </div>
 </figure>
@@ -252,7 +267,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -271,6 +286,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

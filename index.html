@@ -517,6 +517,31 @@ h3{text-wrap:balance}
 /* hero: título e texto com quebras mais limpas */
 .intro .h1{font-size:clamp(40px,4.4vw,66px)!important;line-height:1!important;max-width:620px;text-wrap:balance}
 .intro .hero-p{font-size:18px!important;line-height:1.6!important;max-width:520px;text-wrap:pretty}
+/* ajustes 01/11: equipe de 3 + rede, foto da Adriana com o mesmo zoom */
+.mem .ph img[src*="4c2f4619"]{transform:scale(1.6);transform-origin:57% 28%}
+.netp{max-width:720px;margin:56px auto 0;text-align:center;font-size:19px;line-height:1.6;color:#3D362F;text-wrap:pretty}
+
+/* rede de especialistas: abre ao clicar no cartão */
+button.mem{appearance:none;border:0;background:none;font:inherit;color:inherit;cursor:pointer;padding:0}
+button.mem .more-n{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--warm);margin-top:4px}
+button.mem[aria-expanded="true"] .ph.net{background:var(--accent)}
+.netpanel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1)}
+.netpanel.open{grid-template-rows:1fr}
+.netin{overflow:hidden}
+.netpanel .nethead{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-top:48px}
+.netpanel h3{font-size:clamp(24px,2.2vw,32px);font-weight:700;letter-spacing:-.03em;margin-top:8px}
+.netpanel p{font-size:17px;color:var(--mute);margin-top:6px}
+.netclose{appearance:none;border:0;width:44px;height:44px;border-radius:50%;background:var(--card);font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}
+.netgrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:20px;margin-top:28px;padding:28px;border-radius:28px;background:var(--card)}
+.np{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.nph{width:min(120px,100%);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#F5BE3B;display:grid;place-items:center}
+.nph img{width:100%;height:100%;object-fit:cover}
+.nph span{font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.np b{font-size:15px;font-weight:600}
+.np.more .nph{background:transparent;box-shadow:inset 0 0 0 2px var(--accent)}
+.np.more .nph span{font-size:40px;font-weight:500;color:var(--warm)}
+.np.more b{color:var(--warm)}
+@media (max-width:960px){.netgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -588,7 +613,7 @@ h3{text-wrap:balance}
 
 <!-- CASE EM DESTAQUE: vídeo de Cannes -->
 <section class="cannes grow" aria-labelledby="t-cannes" style="margin-top:80px">
-<video src="/assets/e00c329e613dd441f2c6c022417e0444.mp4" poster="/assets/020d5c4914f3109a9aa302a75810c413.jpg" autoplay muted loop playsinline aria-label="Guerreiros do Passo dançando frevo no tapete vermelho do Festival de Cannes"></video>
+<video src="/assets/e00c329e613dd441f2c6c022417e0444.mp4" poster="/assets/020d5c4914f3109a9aa302a75810c413.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Guerreiros do Passo dançando frevo no tapete vermelho do Festival de Cannes"></video>
 <div class="shade"></div>
 <div class="wrap in">
 <p class="lbl">[ case em destaque · cannes 2025 ]</p>
@@ -615,7 +640,7 @@ h3{text-wrap:balance}
 <div class="wc pop"><span class="ic">01</span><b>Prefeituras e governos</b><span>Roteiros turísticos, planejamento de turismo e imersões com servidores.</span></div>
 <div class="wc pop"><span class="ic">02</span><b>Empresas</b><span>Imersões, treinamentos e palestras para equipes e lideranças.</span></div>
 <div class="wc pop"><span class="ic">03</span><b>Eventos e festivais</b><span>Curadoria de programação, oficinas e experiências para o público.</span></div>
-<div class="wc pop"><span class="ic">04</span><b>Instituições e terceiro setor</b><span>Projetos culturais e educacionais, da concepção à captação de recursos.</span></div>
+<div class="wc pop"><span class="ic">04</span><b>Instituições e terceiro setor</b><span>Projetos culturais e educacionais, da concepção à execução.</span></div>
 </div>
 </div>
 </section>
@@ -625,11 +650,11 @@ h3{text-wrap:balance}
 <div class="svc-stage">
 <div class="svc-top"><span class="lbl">[ o que fazemos ]</span><h2 id="t-svc" class="h2" style="font-size:clamp(30px,3vw,44px)">Do papel <span class="it">à rua.</span></h2></div>
 <div class="svc-photos left" aria-hidden="true">
-<figure class="sp i1"><img src="/assets/c224086132eb711f684c54145f7ce7da.webp" alt=""></figure>
+<figure class="sp i1"><img src="/assets/06f30aa8e248991f9a1b5a631fd06b62.webp" alt=""></figure>
 <figure class="sp i2"><img src="/assets/ebcd9515380f286b3c2ac342b63d9612.webp" alt=""></figure>
 <figure class="sp i3"><img src="/assets/843429a304c79fc25ff25408e27c10db.webp" alt=""></figure>
 <figure class="sp i4"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt=""></figure>
-<figure class="sp i5"><img src="/assets/b7f2fd4047963ce62fd4651cffb8a4d3.webp" alt=""></figure>
+<figure class="sp i5"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt=""></figure>
 </div>
 <div class="svc-mid">
 <div class="svc-list">
@@ -641,17 +666,17 @@ h3{text-wrap:balance}
 </div>
 </div>
 <div class="svc-photos right" aria-hidden="true">
-<figure class="sp i1"><img src="/assets/ecfd329ba3e33f10aaee25e9324786ef.webp" alt=""></figure>
-<figure class="sp i2"><img src="/assets/216576dca37110012438b46ffe6b6022.webp" alt=""></figure>
-<figure class="sp i3"><img src="/assets/1a3f56bf28ee723b1dc7607225e5096e.webp" alt=""></figure>
-<figure class="sp i4"><img src="/assets/9e9a52a908c3dbebdfc5b27b86d97b80.webp" alt=""></figure>
+<figure class="sp i1"><img src="/assets/258996c26327a146b94324c9da6dd19a.webp" alt=""></figure>
+<figure class="sp i2"><img src="/assets/06fef3d8eb2a8a3cc64e479dace7251e.webp" alt=""></figure>
+<figure class="sp i3"><img src="/assets/e078dd25dfb1b748016a0fbd1d814992.webp" alt=""></figure>
+<figure class="sp i4"><img src="/assets/a9dca9da1110a57dd3d729315a654f19.webp" alt=""></figure>
 <figure class="sp i5"><img src="/assets/5659dfed08ce5b1a43b954c7cfbf5cdf.webp" alt=""></figure>
 </div>
 <div class="svc-desc">
 <div class="sd i1"><p>Roteiros culturais e cinematográficos, com app, áudio e realidade aumentada. Ex.: A Cidade no Cinema, no Recife.</p><a href="/o-que-fazemos">Ver serviço</a></div>
 <div class="sd i2"><p>Planejamento turístico e apoio a políticas públicas para cidades e destinos. Ex.: Rio em Cena, no Rio de Janeiro.</p><a href="/o-que-fazemos">Ver serviço</a></div>
 <div class="sd i3"><p>Programação, oficinas, cases e convidados para festivais e encontros. Ex.: ELI Summit 2025, em Natal.</p><a href="/o-que-fazemos">Ver serviço</a></div>
-<div class="sd i4"><p>Concepção, articulação de parceiros e captação de recursos. Ex.: o frevo no tapete vermelho de Cannes.</p><a href="/o-que-fazemos">Ver serviço</a></div>
+<div class="sd i4"><p>Concepção e articulação de parceiros. Ex.: o frevo no tapete vermelho de Cannes.</p><a href="/o-que-fazemos">Ver serviço</a></div>
 <div class="sd i5"><p>Imersões, oficinas e palestras para equipes de empresas, governos e universidades. Ex.: Gabinete do Recentro.</p><a href="/palestras">Ver palestras</a></div>
 </div>
 </div>
@@ -667,11 +692,11 @@ h3{text-wrap:balance}
 </div>
 <div class="stack">
 <a class="sc s1" href="/case-cannes"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="Frevo no tapete vermelho de Cannes"><span class="tag">Curadoria · Cannes 2025</span><span class="bt"><span><b>O frevo no tapete vermelho</b><small>Concepção, curadoria e articulação institucional.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
-<a class="sc s2" href="/case-eli-summit"><img src="/assets/94f0a215e5267e057edb029b2a7b7d40.webp" alt="Equipe do ELI Summit 2025"><span class="tag">Curadoria · Natal 2025</span><span class="bt"><span><b>ELI Summit 2025</b><small>15 oficinas e 30 cases para 700+ participantes.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
-<a class="sc s3" href="/case-cidade-no-cinema"><img src="/assets/c224086132eb711f684c54145f7ce7da.webp" alt="Roteiro A Cidade no Cinema"><span class="tag">Turismo · Recife 2025</span><span class="bt"><span><b>A Cidade no Cinema de Kleber</b><small>Roteiro pela filmografia de Kleber, com app e realidade aumentada.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
-<a class="sc s4" href="/case-rio-em-cena"><img src="/assets/216576dca37110012438b46ffe6b6022.webp" alt="Participantes do Rio em Cena"><span class="tag">Turismo · Rio de Janeiro 2025</span><span class="bt"><span><b>Rio em Cena · Festival LED</b><small>Experiência pelos cenários do cinema no Centro do Rio.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
-<a class="sc s5" href="/case-recentro"><img src="/assets/56a96c70c954883ee236134c689d28ef.webp" alt="Imersão no Gabinete do Recentro"><span class="tag">Imersões · Recife 2025</span><span class="bt"><span><b>Imersão no Gabinete do Recentro</b><small>Diagnóstico, oficinas e um código de conduta criado com a equipe.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
-<a class="sc s6" href="/case-jaboatao"><img src="/assets/215c5731501af18f20c4b1bf0da35385.webp" alt="Imersão com servidores de Jaboatão"><span class="tag">Imersões · Jaboatão 2025</span><span class="bt"><span><b>Imersão com servidores de Jaboatão</b><small>Imersão para a Controladoria Geral do Município.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
+<a class="sc s2" href="/case-eli-summit"><img src="/assets/e078dd25dfb1b748016a0fbd1d814992.webp" alt="Equipe do ELI Summit 2025"><span class="tag">Curadoria · Natal 2025</span><span class="bt"><span><b>ELI Summit 2025</b><small>15 oficinas e 30 cases de ecossistemas locais de inovação.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
+<a class="sc s3" href="/case-cidade-no-cinema"><img src="/assets/06f30aa8e248991f9a1b5a631fd06b62.webp" alt="Roteiro A Cidade no Cinema"><span class="tag">Turismo · Recife 2025</span><span class="bt"><span><b>A Cidade no Cinema de Kleber</b><small>Roteiro pela filmografia de Kleber, com app e realidade aumentada.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
+<a class="sc s4" href="/case-rio-em-cena"><img src="/assets/06fef3d8eb2a8a3cc64e479dace7251e.webp" alt="Participantes do Rio em Cena"><span class="tag">Turismo · Rio de Janeiro 2025</span><span class="bt"><span><b>Rio em Cena · Festival LED</b><small>Experiência pelos cenários do cinema no Centro do Rio.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
+<a class="sc s5" href="/case-recentro"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="Imersão no Gabinete do Recentro"><span class="tag">Imersões · Recife 2025</span><span class="bt"><span><b>Imersão no Gabinete do Recentro</b><small>Diagnóstico, oficinas e um código de conduta criado com a equipe.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
+<a class="sc s6" href="/case-jaboatao"><img src="/assets/21f348cdaec1d9c4f3146b2d0af7a3aa.webp" alt="Imersão com servidores de Jaboatão dos Guararapes"><span class="tag">Imersões · Jaboatão 2025</span><span class="bt"><span><b>Imersão com servidores de Jaboatão dos Guararapes</b><small>Imersão para a Controladoria Geral do Município.</small></span><span class="go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></span></a>
 </div>
 </div>
 </section>
@@ -688,7 +713,7 @@ h3{text-wrap:balance}
 </div>
 <div class="ph par pop"><img src="/assets/5659dfed08ce5b1a43b954c7cfbf5cdf.webp" alt="Adriana Garcia palestrando no HackTown"><span class="live"><i></i>HackTown 2026</span></div>
 <div class="side">
-<div class="sm pop floaty"><img src="/assets/904caacaa4ec49aaacead0da247d6d99.webp" alt="Adriana Garcia conduzindo encontro com servidores"></div>
+<div class="sm pop floaty"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="Adriana Garcia conduzindo encontro com servidores"></div>
 <a class="ring" href="/palestras" aria-label="Ver palestras"><svg class="ringtxt" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1 -92 0"></path></defs><text><textPath href="#circ">palestra · imersão · oficina · palestra · imersão · oficina ·</textPath></text></svg><span class="core"><svg width="20" height="20" viewBox="0 0 12 12" fill="none" stroke="#141210" stroke-width="1.6"><path d="M3 9l6-6M4 3h5v5"></path></svg></span></a>
 <p style="font-size:14px;line-height:1.5;color:#5E574F">Formatos: palestra, imersão e oficina. Presencial, em todo o Brasil.</p>
 </div>
@@ -698,13 +723,14 @@ h3{text-wrap:balance}
 <!-- EQUIPE (igual à página Sobre) -->
 <section class="sec" aria-labelledby="t-eq">
 <div class="wrap">
-<div class="center-head"><span class="pill">Equipe</span><h2 id="t-eq" class="h2 hd">Núcleo fixo. Rede em <span class="it">movimento.</span></h2><p class="p" style="max-width:640px"><strong>Um núcleo fixo de direção, design e gestão.</strong> Para cada projeto, chamamos especialistas da nossa rede: produtores, artistas, pesquisadores e tecnologia.</p></div>
+<div class="center-head"><span class="pill">Equipe</span><h2 id="t-eq" class="h2 hd">Núcleo fixo. Rede em <span class="it">movimento.</span></h2><p class="p" style="max-width:640px"><strong>Um núcleo fixo de direção, design e gestão.</strong></p></div>
 <div class="team">
-<div class="mem pop"><div class="ph"><img src="/assets/4c2f4619a8ddf1e45b02a6067ab9bb1a.webp" alt="Adriana Garcia"></div><b>Adriana Garcia</b><span>Fundadora e Diretora Executiva</span><small>Curadoria, consultoria técnica, facilitação e concepção de eventos.</small></div>
+<div class="mem pop"><div class="ph"><img src="/assets/4c2f4619a8ddf1e45b02a6067ab9bb1a.webp" alt="Adriana Garcia"></div><b>Adriana Garcia</b><span>Fundadora e CEO</span><small>Curadoria, consultoria técnica, facilitação e concepção de eventos.</small></div>
 <div class="mem pop"><div class="ph"><img src="/assets/9b34ed2299d8e9a354648a949e4cb4e7.webp" alt="Myllena Almeida"></div><b>Myllena Almeida</b><span>Product Designer</span><small>Identidade visual, apresentações, sites e aplicativos de geolocalização.</small></div>
 <div class="mem pop"><div class="ph"><img src="/assets/2b010e1a6fcbbed1867e03a5e8d35cff.webp" alt="Pedro Augusto"></div><b>Pedro Augusto</b><span>Designer e Gestão Administrativa</span><small>Comunicação visual, materiais institucionais, editais e documentação.</small></div>
-<div class="mem pop"><div class="ph net"><svg class="sym f4 line-sym" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d1"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d2"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d3"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><b>Rede de especialistas</b><span>Montada para cada projeto</span><small>Produção, arte, pesquisa, tecnologia e facilitação.</small></div>
+<button type="button" class="mem pop" aria-expanded="false" aria-controls="rede" data-net-toggle><div class="ph net"><svg class="sym f4 line-sym" viewBox="-46 -46 307 308" aria-hidden="true"><g class="rot"><g class="d d0"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d1"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d2"><use href="#dp" transform="translate(0 23.73)"></use></g><g class="d d3"><use href="#dp" transform="translate(0 23.73)"></use></g></g></svg></div><b>Rede de especialistas</b><span>Montada para cada projeto</span><small>Produção, arte, pesquisa, tecnologia e facilitação.</small><span class="more-n">Ver a rede ↓</span></button>
 </div>
+<div class="netpanel " id="rede" aria-hidden="true"><div class="netin"><div class="nethead"><div><span class="lbl">[ rede de especialistas ]</span><h3>Quem faz parte da rede</h3><p>Para cada projeto, chamamos especialistas da nossa rede: produtores, artistas e pesquisadores. Alguns deles:</p></div><button type="button" class="netclose" aria-label="Fechar rede de especialistas" data-net-toggle>×</button></div><div class="netgrid"><div class="np"><div class="nph"><img src="/assets/305e0cadac4f9fb729cbb593b189deee.jpg" alt="Caetano Tona"></div><b>Caetano Tona</b></div><div class="np"><div class="nph"><img src="/assets/cc4abd3b10548c92c1aa638e570d78cf.jpg" alt="Simone Kliass"></div><b>Simone Kliass</b></div><div class="np"><div class="nph"><img src="/assets/2307f3f354b866633178abf237f0e595.webp" alt="Letícia Castro"></div><b>Letícia Castro</b></div><div class="np"><div class="nph"><img src="/assets/1a9d4521d6bf611c60f8dbb7e611b992.jpg" alt="Josué Limeira"></div><b>Josué Limeira</b></div><div class="np"><div class="nph"><img src="/assets/9cdf32e2566859b6272705864dc58a56.jpg" alt="Vladimir"></div><b>Vladimir</b></div><div class="np"><div class="nph"><img src="/assets/78665fe0931b607acab89f4c974929db.jpg" alt="House Cultura" style="object-fit:contain;padding:14%;background:#FE7733"></div><b>House Cultura</b></div><div class="np"><div class="nph"><img src="/assets/b6471560caa7336241bdc688f25e1527.jpg" alt="Val Vargas"></div><b>Val Vargas</b></div><div class="np more"><div class="nph"><span>+</span></div><b>E muitos outros</b></div></div></div></div>
 </div>
 </section>
 
@@ -719,7 +745,7 @@ h3{text-wrap:balance}
 <figure class="tc tqc dk"><div class="lo"><img src="/assets/ba00ea520bf6dbc3690847b144af4ecb.webp" alt="Globo" draggable="false"></div><h4>“Cada parte da experiência foi pensada no detalhe.”</h4><blockquote style="margin:0"><p>“Tive o prazer de contar com o olhar profundo e cuidadoso da Adriana para criar uma experiência que conectou audiovisual, cinema e educação durante o Festival LED Globo no Rio e em Recife. Cada parte da experiência foi pensada no detalhe, do guia ao brinde…”</p></blockquote><figcaption class="by"><img src="/assets/2307f3f354b866633178abf237f0e595.webp" alt="" draggable="false"><div><b>Letícia Castro</b><span>Head do Festival LED · Globo</span></div></figcaption></figure>
 <figure class="tc tqc"><div class="lo"><img src="/assets/6b61d37f10e93cc62191afad7c7ee909.webp" alt="Governo de Pernambuco" draggable="false"></div><h4>“Contribuição decisiva para o sucesso do projeto.”</h4><blockquote style="margin:0"><p>“O Governo de Pernambuco agradece, em especial, a Adriana Garcia pela contribuição decisiva, em parceria com a empresa House Cultura, para o sucesso do projeto O Agente Secreto. Seu profissionalismo e dedicação foram fundamentais para os resultados alcançados…”</p></blockquote><figcaption class="by"><img src="/assets/0219da768f939495e4dbd9daf7f96ad7.webp" alt="" draggable="false"><div><b>Paula Sedrim</b><span>Chefe de Gabinete da Secretaria de Cultura de Pernambuco</span></div></figcaption></figure>
 <figure class="tc tqc or"><div class="lo"><img src="/assets/0a5e0dabbaa4483125d9bb6d60b75769.webp" alt="Prefeitura do Recife" draggable="false"></div><h4>“O poder de engajar e de mobilizar.”</h4><blockquote style="margin:0"><p>“Adriana é uma pessoa extremamente criativa e inovadora. Tem múltiplas habilidades e o poder de tocar o coração das pessoas, de engajar e de mobilizar.”</p></blockquote><figcaption class="by"><img src="/assets/e0c87b42ac03c2b0a5b59da3e1089be1.webp" alt="" draggable="false"><div><b>Ana Paula Vilaça</b><span>Chefe do Gabinete do Recentro</span></div></figcaption></figure>
-<figure class="tc tqc"><div class="lo"><img src="/assets/14472c691a9d9e22850e5f6af8b20556.webp" alt="Prefeitura do Jaboatão dos Guararapes" draggable="false"></div><h4>“Uma reflexão necessária.”</h4><blockquote style="margin:0"><p>“A palestra de Adriana Garcia foi inspiradora e nos trouxe uma reflexão necessária…”</p></blockquote><figcaption class="by"><img src="/assets/549a62f2d4a14bbffeba20a8a55861eb.webp" alt="" draggable="false"><div><b>Pricylla Lopes</b><span>Controladoria Geral do Jaboatão</span></div></figcaption></figure>
+<figure class="tc tqc"><div class="lo"><img src="/assets/14472c691a9d9e22850e5f6af8b20556.webp" alt="Prefeitura do Jaboatão dos Guararapes" draggable="false"></div><h4>“Uma reflexão necessária.”</h4><blockquote style="margin:0"><p>“A palestra de Adriana Garcia foi inspiradora e nos trouxe uma reflexão necessária sobre o novo perfil do servidor público. Saímos desse encontro com o coração cheio de inspiração e com a mente aberta para novos caminhos, certos de que, quando unimos inovação, empatia e compromisso social, fortalecemos não apenas a Controladoria, mas toda a sociedade.”</p></blockquote><figcaption class="by"><img src="/assets/549a62f2d4a14bbffeba20a8a55861eb.webp" alt="" draggable="false"><div><b>Pricylla Lopes</b><span>Controladoria Geral do Jaboatão</span></div></figcaption></figure>
 </div>
 <div class="wrap car-ctrl"><span class="lbl">arraste para o lado ou use as setas</span><div style="display:flex;gap:8px"><button type="button" class="arw" aria-label="Depoimento anterior" data-car="prev" data-step="440"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 9H3M7 5L3 9l4 4"></path></svg></button><button type="button" class="arw" aria-label="Próximo depoimento" data-car="next" data-step="440"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h12M11 5l4 4-4 4"></path></svg></button></div></div>
 </div>
@@ -728,7 +754,7 @@ h3{text-wrap:balance}
 <!-- CLIENTES E PARCEIROS (grade do site atual) -->
 <section class="sec" aria-labelledby="t-cli">
 <div class="wrap">
-<div class="center-head"><span class="pill">Clientes e parceiros</span><h2 id="t-cli" class="h2 hd">Quem já colocou ideias em movimento <span class="it">com a gente.</span></h2></div>
+<div class="center-head"><span class="pill">Clientes</span><h2 id="t-cli" class="h2 hd">Quem já colocou ideias em movimento <span class="it">com a gente.</span></h2></div>
 <div class="lgrid">
 <div class="lgc pop"><img src="/assets/bdd890e13312120936ab6495ba0a5b26.webp" alt="Petrobras"></div>
 <div class="lgc pop"><img src="/assets/0f1cc95f8ea64b88bd85a7ee2c541ca1.webp" alt="Embratur"></div>
@@ -786,7 +812,7 @@ h3{text-wrap:balance}
 <div class="bigmark bigword">
 <img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS">
 </div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -805,6 +831,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

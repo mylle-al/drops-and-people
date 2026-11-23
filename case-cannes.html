@@ -162,6 +162,20 @@ h3{text-wrap:balance}
   .gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1 / -1;order:-1}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -187,36 +201,25 @@ h3{text-wrap:balance}
 </section>
 </div>
 
-<div class="bleed grow"><video src="/assets/e00c329e613dd441f2c6c022417e0444.mp4" poster="/assets/020d5c4914f3109a9aa302a75810c413.jpg" autoplay muted loop playsinline aria-label="Guerreiros do Passo dançando frevo no tapete vermelho do Festival de Cannes"></video></div>
+<div class="bleed grow"><video src="/assets/e00c329e613dd441f2c6c022417e0444.mp4" poster="/assets/020d5c4914f3109a9aa302a75810c413.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Guerreiros do Passo dançando frevo no tapete vermelho do Festival de Cannes"></video></div>
 
 <div class="wrap">
 <dl class="ficha">
 <div class="fc pop"><dt>Local</dt><dd>Festival de Cannes, França</dd></div>
 <div class="fc pop"><dt>Ano</dt><dd>2025</dd></div>
-<div class="fc pop"><dt>Papel da Drops</dt><dd>Concepção, curadoria e articulação institucional</dd></div>
-<div class="fc pop"><dt>Parceiros</dt><dd>House Cultura, Guerreiros do Passo e Governo de Pernambuco</dd></div>
+<div class="fc pop"><dt>Papel da Drops</dt><dd>Concepção, curadoria da ação e da festa e articulação institucional</dd></div>
+<div class="fc pop"><dt>Parceiros</dt><dd>House Cultura, Guerreiros do Passo, Governo de Pernambuco, Embratur e Vitrine Filmes</dd></div>
 </dl>
-
-<section class="sec" aria-label="Destaques">
-<div class="hl2">
-<div class="hbox dark pop"><span class="lbl">[ o que a drops fez ]</span><h3>Da ideia ao tapete vermelho.</h3><div class="cx"><span>Concepção da ação</span><span>Curadoria</span><span>Articulação institucional</span><span>Parceria com a House Cultura</span></div></div>
-<div class="hbox or pop"><span class="lbl">[ na imprensa ]</span><h3>“Cannes: equipe de ‘O Agente Secreto’ chega para estreia com bloco de frevo”</h3><p style="font-size:15px">CNN Brasil, cobertura do lançamento do filme.</p></div>
-</div>
-</section>
 
 <section class="sec" aria-label="O case">
 <div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>O lançamento</h3><p class="p">Em 2025, <em>O Agente Secreto</em>, de Kleber Mendonça Filho, teve seu lançamento no Festival de Cannes, o maior festival de cinema do mundo.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Levar a cultura popular de Pernambuco para dentro do festival, no momento de maior visibilidade do filme.</p></div></div>
-<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">A Drops ajudou a conceber e articular, com a House Cultura, a ação que levou os Guerreiros do Passo e o frevo das ruas de Cannes para o tapete vermelho do festival.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">O momento entrou na cobertura do lançamento do filme e levou a identidade de Pernambuco para fora do país.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Levar a cultura popular de Pernambuco para dentro do festival, no momento de maior visibilidade do filme.</p></div></div>
+<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">A Drops ajudou a conceber e articular, com a House Cultura, a ação que levou os Guerreiros do Passo e o frevo das ruas de Cannes para o tapete vermelho do festival, com apoio do Governo de Pernambuco, da Embratur e da Vitrine Filmes. Em 2025, a Drops também cuidou da curadoria da festa.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">A ação levou o frevo e a cultura pernambucana ao centro das atenções internacionais, gerando ampla repercussão na imprensa e nas redes sociais e tornando-se um dos momentos mais marcantes da estreia do filme.</p></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal">
-<figure class="pop par" style="height:420px"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt="Guerreiros do Passo com estandarte e bandeira de Pernambuco"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="Frevo no tapete vermelho"></figure>
-<figure class="pop par" style="height:420px"><img src="/assets/9e9a52a908c3dbebdfc5b27b86d97b80.webp" alt="Equipe de O Agente Secreto com os Guerreiros do Passo"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/8c95ab1611a2b12d010e33798ac60caa.webp" alt="Frevo no tapete vermelho de Cannes, visto de cima" loading="lazy"></figure><figure class="gx"><img src="/assets/5c38b24df54e32c9a00bccadbeb0a25d.webp" alt="Guerreiros do Passo no tapete vermelho" loading="lazy"></figure><figure class="gx"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="Frevo no tapete vermelho" loading="lazy"></figure><figure class="gx"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt="Guerreiros do Passo com estandarte e bandeira de Pernambuco" loading="lazy"></figure><figure class="gx"><img src="/assets/a9dca9da1110a57dd3d729315a654f19.webp" alt="Equipe de O Agente Secreto com os Guerreiros do Passo" loading="lazy"></figure><figure class="gx"><img src="/assets/7c972ec90e44f81a482a65e633abbc13.webp" alt="Guerreiros do Passo com o estandarte em Cannes" loading="lazy"></figure><figure class="gx"><img src="/assets/7237c080dfa41ec208e9763e983b3289.webp" alt="Elenco de O Agente Secreto no tapete vermelho" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8c95ab1611a2b12d010e33798ac60caa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5c38b24df54e32c9a00bccadbeb0a25d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/a9dca9da1110a57dd3d729315a654f19.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7c972ec90e44f81a482a65e633abbc13.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7237c080dfa41ec208e9763e983b3289.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8c95ab1611a2b12d010e33798ac60caa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5c38b24df54e32c9a00bccadbeb0a25d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/a9dca9da1110a57dd3d729315a654f19.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7c972ec90e44f81a482a65e633abbc13.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7237c080dfa41ec208e9763e983b3289.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/8c95ab1611a2b12d010e33798ac60caa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5c38b24df54e32c9a00bccadbeb0a25d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/90f95cf8f1b697cb8d1d6e3704e19103.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/5f99b341f66e3482cbeb9115c35b7daa.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/a9dca9da1110a57dd3d729315a654f19.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7c972ec90e44f81a482a65e633abbc13.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/7237c080dfa41ec208e9763e983b3289.webp" alt="" loading="lazy"></figure></div></div>
 <p class="credit">Fotos: Hansfotos</p>
 </section>
 
@@ -234,7 +237,7 @@ h3{text-wrap:balance}
 <section class="sec">
 <a class="next" href="/case-eli-summit">
 <div style="display:flex;flex-direction:column;gap:16px"><span class="lbl">[ próximo projeto ]</span><h2>ELI Summit 2025 ↗</h2></div>
-<div class="im"><img src="/assets/94f0a215e5267e057edb029b2a7b7d40.webp" alt=""></div>
+<div class="im"><img src="/assets/e078dd25dfb1b748016a0fbd1d814992.webp" alt=""></div>
 </a>
 </section>
 
@@ -258,7 +261,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -277,6 +280,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

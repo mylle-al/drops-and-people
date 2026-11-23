@@ -159,6 +159,21 @@ h3{text-wrap:balance}
   .gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1 / -1;order:-1}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+.gal.gal-2{grid-template-columns:1fr 1fr!important}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -184,36 +199,25 @@ h3{text-wrap:balance}
 </section>
 </div>
 
-<div class="bleed grow" role="img" aria-label="Encontro com servidores do Gabinete do Recentro"><img src="/assets/74046bbb554ff0e4dcf0d9725fceecb6.webp" alt=""></div>
+<div class="bleed grow" role="img" aria-label="Encontro com servidores do Gabinete do Recentro"><img src="/assets/c2639b291bf5a538ecb8bce07b1a8968.webp" alt=""></div>
 
 <div class="wrap">
 <dl class="ficha">
 <div class="fc pop"><dt>Local</dt><dd>Recife, PE</dd></div>
 <div class="fc pop"><dt>Ano</dt><dd>2025</dd></div>
 <div class="fc pop"><dt>Papel da Drops</dt><dd>Diagnóstico, capacitação, facilitação e integração das equipes</dd></div>
-<div class="fc pop"><dt>Parceiros</dt><dd>Prefeitura do Recife e Gabinete do Recentro</dd></div>
+<div class="fc pop"><dt>Parceiros</dt><dd>Gabinete do Recentro, Recife</dd></div>
 </dl>
 
-<section class="sec" aria-label="Destaques">
-<div class="hl2">
-<div class="hbox dark pop"><span class="lbl">[ atividades ]</span><h3>Escuta primeiro, conteúdo depois.</h3><div class="cx"><span>Termômetro emocional</span><span>Rodas de conversa</span><span>Feedback anônimo</span><span>Escuta ativa</span><span>Feedback cruzado</span><span>Comunicação efetiva</span><span>Gestão de conflitos</span><span>Celebrações culturais</span><span>Código de Conduta</span></div></div>
-<div class="hbox or pop"><span class="lbl">[ recomendações entregues ]</span><ul class="ol"><li><span>01</span>Institucionalizar rotinas de feedback</li><li><span>02</span>Redesenhar processos e espaços físicos</li><li><span>03</span>Reuniões periódicas de gestão</li><li><span>04</span>Pesquisas de clima recorrentes</li><li><span>05</span>Reconhecimento público das conquistas da equipe</li></ul></div>
-</div>
-</section>
-
 <section class="sec" aria-label="O case">
-<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A equipe</h3><p class="p">O Gabinete do Recentro, da Prefeitura do Recife, trabalha na revitalização do centro da cidade. Em 2025, a Drops conduziu encontros e imersões com a equipe, com a consultora Adriana Garcia.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Melhorar a comunicação, o clima organizacional e a integração entre as equipes.</p></div></div>
+<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A equipe</h3><p class="p">O Gabinete do Recentro, da Prefeitura do Recife, trabalha na revitalização do centro da cidade. Em 2025, a Drops conduziu encontros e imersões com a equipe, sob a consultoria de Adriana Garcia.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Melhorar a comunicação, o clima organizacional e a integração entre as equipes.</p></div></div>
 <div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Diagnóstico emocional, rodas de conversa, feedback anônimo, oficinas práticas de escuta, comunicação e conflitos, celebrações culturais e a construção coletiva de um Código de Conduta.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">Os servidores receberam bem o programa e valorizaram principalmente os momentos de reflexão e o aumento da confiança entre as equipes. A Drops entregou recomendações para dar continuidade ao trabalho.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">Os servidores receberam bem o programa e valorizaram principalmente os momentos de reflexão e o aumento da confiança entre as equipes. A Drops entregou recomendações para dar continuidade ao trabalho.</p><div class="hbox or pop" style="margin-top:28px;min-height:0"><span class="lbl">[ recomendações entregues ]</span><ul class="ol"><li><span>01</span>Institucionalizar rotinas de feedback</li><li><span>02</span>Redesenhar processos e espaços físicos</li><li><span>03</span>Reuniões periódicas de gestão</li><li><span>04</span>Pesquisas de clima recorrentes</li><li><span>05</span>Reconhecimento público das conquistas da equipe</li></ul></div></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal">
-<figure class="pop par" style="height:420px"><img src="/assets/56a96c70c954883ee236134c689d28ef.webp" alt="Adriana Garcia conduzindo encontro"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/b7f2fd4047963ce62fd4651cffb8a4d3.webp" alt="Roda de conversa com servidores"></figure>
-<figure class="pop par" style="height:420px"><img src="/assets/904caacaa4ec49aaacead0da247d6d99.webp" alt="Servidores do Recentro em encontro"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt="Roda de conversa com servidores" loading="lazy"></figure><figure class="gx"><img src="/assets/f9bab18051d3a5145edb94b41d60f25f.webp" alt="Encontro com servidores do Recentro" loading="lazy"></figure><figure class="gx"><img src="/assets/1f6c8a1dfdf238d8ed5c693709f3b2ed.webp" alt="Adriana Garcia conduzindo o encontro" loading="lazy"></figure><figure class="gx"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="Apresentação no encontro do Recentro" loading="lazy"></figure><figure class="gx"><img src="/assets/e1fa237ead25c9a79c80451341f1837c.webp" alt="Momento de acolhimento entre os participantes" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/f9bab18051d3a5145edb94b41d60f25f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1f6c8a1dfdf238d8ed5c693709f3b2ed.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/e1fa237ead25c9a79c80451341f1837c.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/f9bab18051d3a5145edb94b41d60f25f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1f6c8a1dfdf238d8ed5c693709f3b2ed.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/e1fa237ead25c9a79c80451341f1837c.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/333e99d2a87ab4e97ccee2afbec0136f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/f9bab18051d3a5145edb94b41d60f25f.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1f6c8a1dfdf238d8ed5c693709f3b2ed.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/6ec678628d1126710a77f5054cc17cd7.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/e1fa237ead25c9a79c80451341f1837c.webp" alt="" loading="lazy"></figure></div></div>
 </section>
 
 <section class="sec" aria-label="Depoimento">
@@ -230,7 +234,7 @@ h3{text-wrap:balance}
 <section class="sec">
 <a class="next" href="/case-jaboatao">
 <div style="display:flex;flex-direction:column;gap:16px"><span class="lbl">[ próximo projeto ]</span><h2>Controladoria de Jaboatão ↗</h2></div>
-<div class="im"><img src="/assets/215c5731501af18f20c4b1bf0da35385.webp" alt=""></div>
+<div class="im"><img src="/assets/21f348cdaec1d9c4f3146b2d0af7a3aa.webp" alt=""></div>
 </a>
 </section>
 
@@ -254,7 +258,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -273,6 +277,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');

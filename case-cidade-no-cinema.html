@@ -162,6 +162,31 @@ h3{text-wrap:balance}
   .gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1 / -1;order:-1}
 }
 @media (prefers-reduced-motion:reduce){.dr *{animation:none!important;transition:none!important}}
+/* ajustes 26/10: ficha abaixo da imagem */
+.ficha{margin-top:24px!important}
+.gal.gal-2{grid-template-columns:1fr 1fr!important}
+/* repercussão: informação, não botão */
+.pr{background:none!important;box-shadow:none!important;border-radius:0!important;padding:20px 0 0!important;border-top:2px solid var(--ink)}
+/* galeria: carrossel contínuo, fotos sem corte */
+.galx{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.galx-row{display:flex;gap:14px;width:max-content;animation:galx 45s linear infinite}
+.galx:hover .galx-row{animation-play-state:paused}
+.gx{margin:0;flex:none;height:clamp(260px,32vw,440px);border-radius:24px;overflow:hidden;background:var(--card)}
+.gx img{height:100%;width:auto;display:block}
+.galx{cursor:grab;scrollbar-width:none;touch-action:pan-x pan-y}.galx::-webkit-scrollbar{display:none}.galx.drag{cursor:grabbing}.galx img{user-select:none;-webkit-user-drag:none;pointer-events:none}@keyframes galx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.galx{overflow-x:auto}}
+.ol.stops li{align-items:flex-start;padding:10px 0}
+.ol.stops .st{font-family:'Inter Tight',sans-serif}
+.ol.stops .st b{display:block;font-size:17px;font-weight:600;line-height:1.3}
+.films2{margin-top:auto;padding-top:28px}
+.films2 ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column}
+.films2 li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(252,248,243,.16);font-size:16px;color:#CFC6BA}
+.films2 li b{color:var(--paper);font-weight:600}
+.ol.stops .st small{display:block;font-size:13px;opacity:.75;margin-top:2px}
+/* topo do case: imagem inteira, sem corte e sem esticar */
+.bleed{margin:56px auto 0!important;max-width:1120px;width:calc(100% - 2*clamp(16px,4vw,48px));height:auto!important;border-radius:28px;background:var(--card)}
+.bleed img{height:auto!important;object-fit:contain!important}
+.bleed video{width:100%;height:auto!important;display:block}
 </style>
 </head>
 <body>
@@ -187,50 +212,46 @@ h3{text-wrap:balance}
 </section>
 </div>
 
-<div class="bleed grow" role="img" aria-label="Público reunido em ponto do roteiro A Cidade no Cinema, no Recife"><img src="/assets/c224086132eb711f684c54145f7ce7da.webp" alt=""></div>
+<div class="bleed grow" role="img" aria-label="Público reunido em ponto do roteiro A Cidade no Cinema, no Recife"><img src="/assets/06f30aa8e248991f9a1b5a631fd06b62.webp" alt=""></div>
 
 <div class="wrap">
 <dl class="ficha">
 <div class="fc pop"><dt>Local</dt><dd>Recife, PE</dd></div>
 <div class="fc pop"><dt>Ano</dt><dd>2025</dd></div>
 <div class="fc pop"><dt>Papel da Drops</dt><dd>Concepção da experiência e desenvolvimento do roteiro imersivo</dd></div>
-<div class="fc pop"><dt>Parceiros</dt><dd>Embratur, Vitrine Filmes, Prefeitura do Recife, Recife Film Commission e Roteo (tecnologia)</dd></div>
+<div class="fc pop"><dt>Parceiros</dt><dd>Embratur, Vitrine Filmes, Prefeitura do Recife, Recife Film Commission e Roteo</dd></div>
 </dl>
 
 <section class="sec" aria-label="Destaques">
 <div class="hl2">
-<div class="hbox dark pop"><span class="lbl">[ formatos da experiência ]</span><h3>Cinema, cidade e tecnologia no mesmo roteiro.</h3><div class="cx"><span>App</span><span>Áudio</span><span>Realidade aumentada</span><span>Gamificação</span><span>Roteiro guiado</span></div></div>
-<div class="hbox or pop"><span class="lbl">[ paradas do roteiro ]</span><ul class="ol"><li><span>01</span>Cinema São Luiz, com a pré-estreia de O Agente Secreto</li><li><span>02</span>Edifício Oceania</li><li><span>03</span>Parque Treze de Maio</li><li><span>04</span>Ponte da Boa Vista</li></ul></div>
+<div class="hbox dark pop"><span class="lbl">[ formatos da experiência ]</span><h3>Cinema, cidade e tecnologia no mesmo roteiro.</h3><div class="cx"><span>App</span><span>Áudio</span><span>Realidade aumentada</span><span>Gamificação</span><span>Roteiro guiado</span></div><div class="films2"><span class="lbl">[ filmes contemplados ]</span><ul><li><b>Recife Frio</b>2009</li><li><b>O Som ao Redor</b>2012</li><li><b>Aquarius</b>2016</li><li><b>Retratos Fantasmas</b>2023</li><li><b>O Agente Secreto</b>2025</li></ul></div></div>
+<div class="hbox or pop"><span class="lbl">[ as 9 paradas do roteiro ]</span><ul class="ol stops"><li><span>01</span><span class="st"><b>Parque Treze de Maio</b><small>O Agente Secreto</small></span></li><li><span>02</span><span class="st"><b>Antigo Cine Veneza</b><small>Retratos Fantasmas</small></span></li><li><span>03</span><span class="st"><b>Teatro do Parque</b><small>Retratos Fantasmas</small></span></li><li><span>04</span><span class="st"><b>Cinema São Luiz</b><small>Retratos Fantasmas e O Agente Secreto</small></span></li><li><span>05</span><span class="st"><b>Edifício Trianon</b><small>Retratos Fantasmas</small></span></li><li><span>06</span><span class="st"><b>Cine Art Palácio</b><small>Retratos Fantasmas</small></span></li><li><span>07</span><span class="st"><b>Ponte da Boa Vista</b><small>Recife Frio, Retratos Fantasmas e O Agente Secreto</small></span></li><li><span>08</span><span class="st"><b>Antigo Cinema Moderno</b><small>Retratos Fantasmas</small></span></li><li><span>09</span><span class="st"><b>Restaurante Leite</b><small>Aquarius</small></span></li></ul></div>
 </div>
 </section>
 
 <section class="sec" aria-label="O case">
-<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A cidade dos filmes</h3><p class="p">O Recife aparece em toda a filmografia de Kleber Mendonça Filho. O projeto transformou esses lugares num roteiro a céu aberto, unindo cinema, cultura, turismo e tecnologia.</p></div></div>
-<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>A pergunta</h3><p class="p">Fazer o público viver a cidade que aparece nos filmes, e não apenas assistir a eles.</p></div></div>
-<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Concebemos a experiência e o roteiro imersivo. O percurso começou na pré-estreia de <em>O Agente Secreto</em> no Cinema São Luiz e passou por lugares ligados à filmografia, com histórias, cenas, bastidores e uma ativação em realidade aumentada.</p></div></div>
-<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">O roteiro ganhou novas edições no Rec’n’Play 2025 e no Festival LED, foi notícia na CNN Brasil e na Folha de Pernambuco e circulou nas redes de Kleber Mendonça Filho e de Marcelo Freixo.</p></div></div>
+<div class="story rv"><span class="lbl">[ contexto ]</span><div><h3>A cidade dos filmes</h3><p class="p">O Recife aparece em quase toda a filmografia de Kleber Mendonça Filho. O projeto transformou esses lugares num roteiro a céu aberto, unindo cinema, cultura, turismo e tecnologia.</p></div></div>
+<div class="story rv"><span class="lbl">[ desafio ]</span><div><h3>O desafio</h3><p class="p">Transformar os cenários reais da filmografia do diretor em uma experiência turística inovadora, conectando cinema, memória afetiva, cultura e tecnologia para revelar um novo olhar sobre o Recife, protagonista dos seus filmes.</p></div></div>
+<div class="story rv"><span class="lbl">[ o que fizemos ]</span><div><h3>A entrega</h3><p class="p">Concebemos a experiência e o roteiro imersivo, com 9 paradas ligadas a <em>Recife Frio</em>, <em>Aquarius</em>, <em>Retratos Fantasmas</em> e <em>O Agente Secreto</em>. Todos os pontos foram mapeados e geolocalizados no app: em cada parada, o público tinha mapa interativo, vídeos, a história do lugar, narração e um espaço para ler e deixar comentários de outros visitantes. O percurso ainda contou com folder impresso, áudio e ativação em realidade aumentada.</p></div></div>
+<div class="story rv"><span class="lbl">[ resultado ]</span><div><h3>O que ficou</h3><p class="p">O roteiro teve novas edições no Rec’n’Play 2025 e no Festival LED, da Rede Globo, com repercussão em veículos como CNN Brasil e Folha de Pernambuco. Além da visibilidade, deixou um legado permanente: qualquer visitante pode percorrer os cenários dos filmes de Kleber e conhecer o Recife pelo cinema.</p></div></div>
 </section>
 
 <section class="sec" aria-label="Galeria">
-<div class="gal">
-<figure class="pop par" style="height:420px"><img src="/assets/ecfd329ba3e33f10aaee25e9324786ef.webp" alt="Participante lendo o guia do roteiro no ônibus"></figure>
-<figure class="pop par" style="height:520px"><img src="/assets/5fb6813b2437d5d811d67e5ef8a5baea.webp" alt="Público em ponto do roteiro"></figure>
-<figure class="pop par" style="height:420px"><img src="/assets/25649d57e5181120689a00e969333ff5.webp" alt="Encontro do roteiro A Cidade no Cinema"></figure>
-</div>
+<div class="galx"><div class="galx-row"><figure class="gx"><img src="/assets/680b3e96f306aad834a716dee1a279b6.webp" alt="Público em ponto do roteiro" loading="lazy"></figure><figure class="gx"><img src="/assets/258996c26327a146b94324c9da6dd19a.webp" alt="Participante lendo o guia do roteiro no ônibus" loading="lazy"></figure><figure class="gx"><img src="/assets/c53a2bc6e3dfecbe4adec521fa9425e9.webp" alt="Folder do roteiro A Cidade no Cinema" loading="lazy"></figure><figure class="gx"><img src="/assets/d822fcaae9251df960e33825e27da572.webp" alt="Equipe do roteiro" loading="lazy"></figure><figure class="gx"><img src="/assets/1bf7f6c69147b2a6aaf81e326140745d.webp" alt="Grupo do roteiro A Cidade no Cinema" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/680b3e96f306aad834a716dee1a279b6.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/258996c26327a146b94324c9da6dd19a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/c53a2bc6e3dfecbe4adec521fa9425e9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/d822fcaae9251df960e33825e27da572.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1bf7f6c69147b2a6aaf81e326140745d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/680b3e96f306aad834a716dee1a279b6.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/258996c26327a146b94324c9da6dd19a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/c53a2bc6e3dfecbe4adec521fa9425e9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/d822fcaae9251df960e33825e27da572.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1bf7f6c69147b2a6aaf81e326140745d.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/680b3e96f306aad834a716dee1a279b6.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/258996c26327a146b94324c9da6dd19a.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/c53a2bc6e3dfecbe4adec521fa9425e9.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/d822fcaae9251df960e33825e27da572.webp" alt="" loading="lazy"></figure><figure class="gx" aria-hidden="true"><img src="/assets/1bf7f6c69147b2a6aaf81e326140745d.webp" alt="" loading="lazy"></figure></div></div>
 </section>
 
 <section class="sec" aria-label="Repercussão">
 <div class="press">
-<div class="pr pop"><span class="lbl">[ novas edições ]</span><b>Rec’n’Play 2025</b><span>O roteiro voltou para a programação do festival de tecnologia do Recife.</span></div>
+<div class="pr pop"><span class="lbl">[ novas edições ]</span><b>Rec’n’Play 2025</b><span>Mais de 150 mil visualizações nas redes e ingressos esgotados em minutos.</span></div>
 <div class="pr pop"><span class="lbl">[ novas edições ]</span><b>Festival LED</b><span>Nova edição dentro da programação do festival da Globo.</span></div>
-<div class="pr pop"><span class="lbl">[ imprensa ]</span><b>CNN Brasil e Folha de Pernambuco</b><span>Cobertura do projeto e do roteiro.</span></div>
+<div class="pr pop"><span class="lbl">[ imprensa ]</span><b>Imprensa e redes</b><span>Folha de Pernambuco, CNN Brasil, artigo da Embratur e as redes de Kleber Mendonça Filho e Marcelo Freixo.</span></div>
 </div>
 </section>
 
 <section class="sec">
 <a class="next" href="/case-rio-em-cena">
 <div style="display:flex;flex-direction:column;gap:16px"><span class="lbl">[ próximo projeto ]</span><h2>Rio em Cena ↗</h2></div>
-<div class="im"><img src="/assets/216576dca37110012438b46ffe6b6022.webp" alt=""></div>
+<div class="im"><img src="/assets/06fef3d8eb2a8a3cc64e479dace7251e.webp" alt=""></div>
 </a>
 </section>
 
@@ -254,7 +275,7 @@ h3{text-wrap:balance}
 <div><h4>Redes</h4><a href="https://instagram.com/dropsandpeople">Instagram @dropsandpeople</a></div>
 </div>
 <div class="bigmark bigword"><img src="/assets/03a66f9292453bf7179903812399d3c5.png" alt="DROPS"></div>
-<div class="legal"><span>© 2026 Drops and People · Recife, Brasil</span><span>Cultura · Turismo · Educação</span></div>
+<div class="legal"><span>© 2026 Drops and People · Rio de Janeiro, Brasil</span><span>Cultura · Turismo · Educação</span></div>
 </div>
 </footer>
 </div>
@@ -273,6 +294,39 @@ h3{text-wrap:balance}
   document.querySelectorAll('[data-car]').forEach(function(b){
     b.addEventListener('click',function(){var t=b.closest('.car').querySelector('.car-track');var step=+b.getAttribute('data-step')||320;t.scrollBy({left:b.getAttribute('data-car')==='prev'?-step:step,behavior:'smooth'});});
   });
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.vidcard'),v=c.querySelector('video');v.controls=true;v.play();c.classList.add('playing');});});
+  var GX=function(el,e){
+  var g=el._g,now=performance.now();
+  if(!g){
+    var row=el.firstElementChild,tx=0;
+    try{tx=-(new DOMMatrixReadOnly(getComputedStyle(row).transform).m41)||0;}catch(_){}
+    row.style.animation='none';row.style.transform='none';
+    g=el._g={row:row,drag:null,hover:false,touch:false,last:0,t:now,pos:tx};
+    el.scrollLeft=tx;
+    var wrap=function(){var h=row.scrollWidth/2;if(h<50)return;if(g.pos>=h)g.pos-=h;else if(g.pos<=0)g.pos+=h;};
+    g.wrap=wrap;
+    var step=function(t){
+      if(!el.isConnected)return;
+      var dt=Math.min(t-g.t,64);g.t=t;var h=row.scrollWidth/2;
+      if(h>=50&&!g.drag&&!g.hover&&!g.touch&&t-g.last>1500){g.pos+=h/45000*dt;wrap();el.scrollLeft=g.pos;}
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  var ty=e.type;
+  if(ty==='pointerenter'){if(e.pointerType==='mouse')g.hover=true;}
+  else if(ty==='pointerleave'){g.hover=false;if(g.drag){g.drag=null;el.classList.remove('drag');g.last=now;}}
+  else if(ty==='pointerdown'){
+    if(e.pointerType==='mouse'){g.drag={x:e.clientX,p:g.pos};el.classList.add('drag');try{el.setPointerCapture(e.pointerId);}catch(_){}if(e.preventDefault)e.preventDefault();}
+    else{g.touch=true;g.last=now;}
+  }
+  else if(ty==='pointermove'){if(g.drag){g.pos=g.drag.p-(e.clientX-g.drag.x);g.wrap();el.scrollLeft=g.pos;}}
+  else if(ty==='pointerup'||ty==='pointercancel'){g.drag=null;g.touch=false;g.last=now;el.classList.remove('drag');}
+  else if(ty==='scroll'){if(Math.abs(el.scrollLeft-g.pos)>2){g.pos=el.scrollLeft;g.last=now;var h=g.row.scrollWidth/2;if(h>=50&&(g.pos>=h||g.pos<=0)){g.wrap();el.scrollLeft=g.pos;}}}
+};
+  document.querySelectorAll('.galx').forEach(function(el){['pointerenter','pointerleave','pointerdown','pointermove','pointerup','pointercancel','scroll'].forEach(function(t){el.addEventListener(t,function(e){GX(el,e);});});GX(el,{type:'init'});});
+  var np=document.querySelector('.netpanel');
+  document.querySelectorAll('[data-net-toggle]').forEach(function(b){b.addEventListener('click',function(){if(!np)return;var o=!np.classList.contains('open');np.classList.toggle('open',o);np.setAttribute('aria-hidden',o?'false':'true');document.querySelectorAll('button.mem[data-net-toggle]').forEach(function(x){x.setAttribute('aria-expanded',o?'true':'false');});});});
   var fb=document.querySelectorAll('.fbtn[data-f]');
   if(fb.length){
     var cards=document.querySelectorAll('.card[data-k]'),count=document.querySelector('.count');
